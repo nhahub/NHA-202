@@ -22,8 +22,8 @@ public class LoginPage {
 
     // Actions
     public void setLogin(String userName, String pass){
-        driver.findElement(username).sendKeys();
-        driver.findElement(password).sendKeys();
+        driver.findElement(username).sendKeys(userName);
+        driver.findElement(password).sendKeys(pass);
         driver.findElement(loginButton).click();
 
     }
