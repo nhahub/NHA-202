@@ -13,9 +13,6 @@ public class MainTestSuit {
     CheckoutOverviewTest checkoutOverviewTest = new CheckoutOverviewTest();
 
 
-@Test
-public void test(){
-    WebDriver driver= new ChromeDriver();
-    driver.navigate().to("https://www.google.com");
-}
+
+
 }
