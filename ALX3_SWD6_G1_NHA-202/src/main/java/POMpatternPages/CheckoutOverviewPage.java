@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 
 public class CheckoutOverviewPage {
     WebDriver driver;
@@ -38,12 +40,13 @@ public class CheckoutOverviewPage {
         LoginPage loginPage = new LoginPage(this.driver);
         loginPage.setLogin("standard_user", "secret_sauce");
 
+
         //CompleteProducts
         By firstProductButton = By.xpath("//button[@name='add-to-cart-sauce-labs-backpack']");
         By secondProductButton = By.xpath("//button[@name='add-to-cart-sauce-labs-bike-light']");
+        By shoppingCart = By.xpath("//a[@data-test='shopping-cart-link']");
         this.driver.findElement(firstProductButton).click();
         this.driver.findElement(secondProductButton).click();
-        By shoppingCart = By.xpath("//a[@data-test='shopping-cart-link']");
         this.driver.findElement(shoppingCart).click();
 
         //Check Cart
@@ -63,20 +66,20 @@ public class CheckoutOverviewPage {
     }
 
     public double FindItemsTotal() {
-        return Double.parseDouble(driver.findElement(itemsSubTotalPrice).getText().substring(13,18));
+        return Double.parseDouble(driver.findElement(itemsSubTotalPrice).getText().substring(13, 18));
     }
 
     public double FindTax() {
-        return Double.parseDouble(driver.findElement(tax).getText().substring(6,10));
+        return Double.parseDouble(driver.findElement(tax).getText().substring(6, 10));
     }
 
     public double FindFinalPrice() {
-        return Double.parseDouble(driver.findElement(finalPrice).getText().substring(8,13));
+        return Double.parseDouble(driver.findElement(finalPrice).getText().substring(8, 13));
     }
 
     public double CalculateItemsTotal() {
-        double priceOfFirstItem = Double.parseDouble(driver.findElement(firstItemPrice).getText().substring(1,6));
-        double priceOfSecondItem = Double.parseDouble(driver.findElement(secondItemPrice).getText().substring(1,5));
+        double priceOfFirstItem = Double.parseDouble(driver.findElement(firstItemPrice).getText().substring(1, 6));
+        double priceOfSecondItem = Double.parseDouble(driver.findElement(secondItemPrice).getText().substring(1, 5));
         return priceOfFirstItem + priceOfSecondItem;
     }
 
