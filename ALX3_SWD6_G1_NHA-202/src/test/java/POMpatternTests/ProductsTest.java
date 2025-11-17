@@ -17,7 +17,7 @@ public class ProductsTest {
 
     @BeforeMethod
     public void setUp() {
-
+        //
         // Initialize WebDriver and  productpage
         driver = new ChromeDriver();
         productpage = new ProductsPage(driver);

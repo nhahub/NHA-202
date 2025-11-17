@@ -8,6 +8,7 @@ import java.util.List;
 public class ProductsPage {
      WebDriver driver;
     // Locators
+    //
     private  By titleLocator = By.tagName("title");
     private  By firstProductButton = By.xpath("//div[text()='Sauce Labs Backpack']/following-sibling::div/button");
     private  By secondProductButton = By.xpath("//div[text()='Sauce Labs Bike Light']/following-sibling::div/button");
