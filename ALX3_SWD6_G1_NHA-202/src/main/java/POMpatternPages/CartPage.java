@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -13,18 +12,18 @@ public class CartPage {
 
     WebDriver driver;
     WebDriverWait wait;
-
+// Locators
     private final By cartItem = By.className("cart_item");
     private final By cartItemName = By.className("inventory_item_name");
     private final By cartItemPrice = By.className("inventory_item_price");
     private final By quantityField = By.cssSelector(".cart_quantity");
     private final By checkoutBtn = By.id("checkout");
-
+    // Constructor
     public CartPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
-
+    // Methods
     public int getCartItemsCount() {
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(cartItem));
         return driver.findElements(cartItem).size();

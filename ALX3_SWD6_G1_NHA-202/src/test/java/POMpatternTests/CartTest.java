@@ -19,11 +19,11 @@ public class CartTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com/");
-
+// Login
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
-
+// Add items to cart
         driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
         driver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
 
@@ -31,7 +31,7 @@ public class CartTest {
 
         cart = new CartPage(driver);
     }
-
+        // Tests
     @Test
     public void verifyTotalItemsInCart() {
         Assert.assertEquals(cart.getCartItemsCount(), 2, "Cart should have 2 items");
