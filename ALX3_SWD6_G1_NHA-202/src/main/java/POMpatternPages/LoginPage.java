@@ -1,5 +1,6 @@
 package POMpatternPages;
 
+import Bot.ActionsBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -8,6 +9,7 @@ public class LoginPage {
 
     // variables
     private final WebDriver driver;
+    private ActionsBot actionsBot;
 
     //locators
      private final By username=By.id("user-name");
@@ -17,16 +19,18 @@ public class LoginPage {
 
      // constructor
     public LoginPage(WebDriver driver){
+
         this.driver= driver;
+       this.actionsBot = new ActionsBot(driver);
     }
 
 
     // Actions
     public LoginPage setLogin(String userName, String pass){
-        driver.findElement(username).sendKeys(userName);
-        driver.findElement(password).sendKeys(pass);
-        driver.findElement(loginButton).click();
-        return this;
+       actionsBot.typing(username, userName);
+       actionsBot.typing(password, pass);
+       actionsBot.clicking(loginButton);
+       return this;
     }
 
     // validation
