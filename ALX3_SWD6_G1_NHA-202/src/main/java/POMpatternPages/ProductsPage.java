@@ -7,13 +7,13 @@ import java.util.List;
 
 public class ProductsPage {
      WebDriver driver;
-    // Locators
-    //
-    private  By titleLocator = By.tagName("title");
-    private  By firstProductButton = By.xpath("//div[text()='Sauce Labs Backpack']/following-sibling::div/button");
-    private  By secondProductButton = By.xpath("//div[text()='Sauce Labs Bike Light']/following-sibling::div/button");
-    private  By cartIcon = By.className("shopping_cart_link");
-    private  By cartItems = By.className("cart_item");
+     // Locators
+
+      By titleLocator = By.tagName("title");
+      By firstProductButton = By.xpath("//div[text()='Sauce Labs Backpack']/following-sibling::div/button");
+      By secondProductButton = By.xpath("//div[text()='Sauce Labs Bike Light']/following-sibling::div/button");
+      By cartIcon = By.className("shopping_cart_link");
+      By cartItems = By.className("cart_item");
 
     // Constructor
     public ProductsPage(WebDriver driver) {

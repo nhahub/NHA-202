@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 
 
+
 public class ProductsTest {
 
     WebDriver driver;
@@ -28,7 +29,7 @@ public class ProductsTest {
     public void testAddProductsToCart() {
         // Step 1: Verify Products are Displayed
         String title =  productpage.getPageTitle();
-        Assert.assertTrue("Page title does not contain 'Products'", title.contains("Products"));
+        Assert.assertTrue(title.contains("Products"), "Page title does not contain 'Products'");
 
         // Step 2: Add Products to Cart
         productpage.addFirstProductToCart();
@@ -36,7 +37,8 @@ public class ProductsTest {
 
         // Step 3: Go to Cart and Verify Total Number of Items in Cart
         productpage.goToCart();
-        Assert.assertEquals("Cart does not contain 2 items", 2,  productpage.getCartItems().size());
+        Assert.assertEquals(productpage.getCartItems().size(), 2,"Cart does not contain 2 items");
+
 
         System.out.println("Test passed: 2 items added to the cart.");
 
