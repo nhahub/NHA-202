@@ -80,6 +80,9 @@ public class CheckoutOverviewPage {
         return priceOfFirstItem + priceOfSecondItem;
     }
 
+    public String checkOutGetUrl(){
+        return driver.getCurrentUrl();
+    }
     public double CalculateFinalPrice() {
         return CalculateItemsTotal() + FindTax();
     }
