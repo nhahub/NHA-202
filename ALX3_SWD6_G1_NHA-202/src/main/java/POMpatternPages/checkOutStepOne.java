@@ -21,10 +21,12 @@ public class checkOutStepOne {
     }
 
 
-    public CheckoutOverviewPage fillYourData(,){
-        actionsBot.typing(firstName,"standard_user");
-        actionsBot.typing(lastName,"secret_sauce");
-        actionsBot.typing(zipCode,"02456");
+    public CheckoutOverviewPage fillFirstName(,){
+        actionsBot.typing(firstName,"standard_user");}
+    public CheckoutOverviewPage secondFirstName(,){
+        actionsBot.typing(lastName,"secret_sauce");}
+    public CheckoutOverviewPage fillzipCode(,){
+        actionsBot.typing(zipCode,"02456");}
         actionsBot.clicking(continueButton);
         return new CheckoutOverviewPage (driver);
 
