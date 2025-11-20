@@ -1,5 +1,6 @@
 package POMpatternPages;
 
+import Bot.ActionsBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
@@ -10,21 +11,14 @@ import java.util.concurrent.atomic.AtomicReference;
 public class CheckoutOverviewPage {
     WebDriver driver;
     Wait<WebDriver> wait;
-
-    // By firstItemPrice = By.xpath("//div[3]//text()[2]");
-    // By secondItemPrice = By.xpath("//div[4]//text()[2]");
-    // By itemsTotalPrice = By.xpath("//div[6]/text()[2]");
-    // By tax = By.xpath("//div[7]/text()[2]");
-    // By finalPrice = By.xpath("//div[8]/text()[2]");
-    //By firstItemPrice = By.xpath("//*[@id='checkout_summary_container']/div/div[1]/div[3]/div[2]/div[2]/div");
-    //By secondItemPrice = By.xpath("//*[@id='checkout_summary_container']/div/div[1]/div[4]/div[2]/div[2]/div");
-    //By firstItemPrice = By.xpath("//div[3]/[@class='inventory_item_price']");
     By firstItemPrice = By.xpath("//*[@id='checkout_summary_container']/div/div[1]/div[3]/div[2]/div[2]/div");
     By secondItemPrice = By.xpath("//*[@id='checkout_summary_container']/div/div[1]/div[4]/div[2]/div[2]/div");
     By itemsSubTotalPrice = By.xpath("//*[@class='summary_subtotal_label']");
     By tax = By.xpath("//*[@class='summary_tax_label']");
     By finalPrice = By.xpath("//*[@class='summary_total_label']");
 
+    public String firstItemName = "Sauce Labs Backpack";
+    public String secondItemName = "Sauce Labs Bike Light";
 
     String url = "https://www.saucedemo.com/checkout-step-two.html";
 
@@ -41,7 +35,7 @@ public class CheckoutOverviewPage {
         loginPage.setLogin("standard_user", "secret_sauce");
 
 
-        //CompleteProducts
+        //Select Products
         By firstProductButton = By.xpath("//button[@name='add-to-cart-sauce-labs-backpack']");
         By secondProductButton = By.xpath("//button[@name='add-to-cart-sauce-labs-bike-light']");
         By shoppingCart = By.xpath("//a[@data-test='shopping-cart-link']");
@@ -58,8 +52,8 @@ public class CheckoutOverviewPage {
         By lastnameInput = By.xpath("//input[@name='lastName']");
         By postalCodeInput = By.xpath("//input[@name='postalCode']");
         By continueButton = By.xpath("//input[@name='continue']");
-        this.driver.findElement(firstnameInput).sendKeys("First");
-        this.driver.findElement(lastnameInput).sendKeys("Last");
+        this.driver.findElement(firstnameInput).sendKeys("Abdelrahman");
+        this.driver.findElement(lastnameInput).sendKeys("Shalaby");
         this.driver.findElement(postalCodeInput).sendKeys("1234");
         this.driver.findElement(continueButton).click();
         //this.driver.navigate().to(url);
@@ -88,16 +82,15 @@ public class CheckoutOverviewPage {
     }
 
 
-//    public double TemporaryMethod() {
-//        double priceOfFirstItem = Double.parseDouble(driver.findElement(firstItemPrice).toString());
-//        double priceOfSecondItem = Double.parseDouble(driver.findElement(secondItemPrice).toString());
-//        double priceOfItemsTotal = Double.parseDouble(driver.findElement(itemsTotalPrice).toString());
-//        double addedTax = Double.parseDouble(driver.findElement(tax).toString());
-//        double priceOfFinalTotal = Double.parseDouble(driver.findElement(finalPrice).toString());
-//
-//        double
-//        return
-//    }
+    public String getFirstItemNameWithBot() {
+        ActionsBot actionsBot = new ActionsBot(driver);
+        By firstItemName = By.xpath("//*[@id='item_4_title_link']/div");
+        return actionsBot.getText(firstItemName);
+    }
 
-
+    public String getSecondItemNameWithBot() {
+        ActionsBot actionsBot = new ActionsBot(driver);
+        By secondItemName = By.xpath("//*[@id='item_0_title_link']/div");
+        return actionsBot.getText(secondItemName);
+    }
 }

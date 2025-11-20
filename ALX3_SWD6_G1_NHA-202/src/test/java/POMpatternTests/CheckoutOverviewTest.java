@@ -1,7 +1,6 @@
 package POMpatternTests;
 
 import POMpatternPages.CheckoutOverviewPage;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,11 +19,6 @@ public class CheckoutOverviewTest {
 
     @BeforeMethod
     public void setup() {
-        //Examples of arguments that can be added to AddArguments method for ChromeOptions
-        // --start-maximized --window-size=1920,1080 --incognito
-        // --disable-infobars --disable-notifications
-        // --disable-notifications --profile.password_manager_leak_detection
-        // --credentials_enable_service --profile.password_manager_enabled"
         options.addArguments("--start-maximized --guest");
         driver = new ChromeDriver(options);
     }
@@ -44,6 +38,20 @@ public class CheckoutOverviewTest {
         Assert.assertEquals(
                 checkoutOverviewPage.CalculateFinalPrice(),
                 checkoutOverviewPage.FindFinalPrice());
+    }
+
+    @Test
+    public void testEnsuringFirstItemNameWithBot() {
+        CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver, wait);
+        checkoutOverviewPage.navigate();
+        Assert.assertEquals(checkoutOverviewPage.getFirstItemNameWithBot(), checkoutOverviewPage.firstItemName);
+    }
+
+    @Test
+    public void testEnsuringSecondItemNameWithBot() {
+        CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver, wait);
+        checkoutOverviewPage.navigate();
+        Assert.assertEquals(checkoutOverviewPage.getSecondItemNameWithBot(), checkoutOverviewPage.secondItemName);
     }
 
     @AfterMethod

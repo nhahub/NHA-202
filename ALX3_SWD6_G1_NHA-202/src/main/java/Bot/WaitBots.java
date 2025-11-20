@@ -1,6 +1,7 @@
 package Bot;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.net.UrlChecker;
 import org.openqa.selenium.support.ui.FluentWait;
 
 import java.time.Duration;
