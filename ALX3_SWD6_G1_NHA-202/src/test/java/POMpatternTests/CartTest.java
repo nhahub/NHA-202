@@ -4,6 +4,7 @@ import POMpatternPages.CartPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -28,7 +29,6 @@ public class CartTest {
         driver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
 
         driver.findElement(By.className("shopping_cart_link")).click();
-
         cart = new CartPage(driver);
     }
         // Tests

@@ -18,79 +18,65 @@ public class LoginTest {
 
 
     @Test
-    public void LoginTC1(){
-         new LoginPage(driver).
-        setLogin("standard_user", "secret_sauce").
-      validation("https://www.saucedemo.com/inventory.html");
+    public void LoginTC1() {
+        new LoginPage(driver).
+                setLogin("standard_user", "secret_sauce").
+                validation("https://www.saucedemo.com/inventory.html");
     }
 
     @Test
-    public void LoginTC2(){
+    public void LoginTC2() {
         new LoginPage(driver).
                 setLogin("locked_out_user", "secret_sauce").
                 validation("https://www.saucedemo.com/inventory.html");
     }
 
     @Test
-    public void LoginTc3(){
+    public void LoginTc3() {
         new LoginPage(driver).
                 setLogin("problem_user", "secret_sauce").
                 validation("https://www.saucedemo.com/inventory.html");
     }
 
 
-
-@Test
-public void LoginTc4(){
-    new LoginPage(driver).
-            setLogin("performance_glitch_user", "secret_sauce").
-            validation("https://www.saucedemo.com/inventory.html");
-}
-
+    @Test
+    public void LoginTc4() {
+        new LoginPage(driver).
+                setLogin("performance_glitch_user", "secret_sauce").
+                validation("https://www.saucedemo.com/inventory.html");
+    }
 
 
-@Test
-public void LoginTc5(){
-    new LoginPage(driver).
-            setLogin("error_user", "secret_sauce").
-            validation("https://www.saucedemo.com/inventory.html");
-}
+    @Test
+    public void LoginTc5() {
+        new LoginPage(driver).
+                setLogin("error_user", "secret_sauce").
+                validation("https://www.saucedemo.com/inventory.html");
+    }
 
 
+    @Test
 
-
-
-
-@Test
-
-public void LoginTc6(){
-    new LoginPage(driver).
-            setLogin("visual_user", "secret_sauce").
-            validation("https://www.saucedemo.com/inventory.html");
-}
-
-
-
-
-
-
-
-
+    public void LoginTc6() {
+        new LoginPage(driver).
+                setLogin("visual_user", "secret_sauce").
+                validation("https://www.saucedemo.com/inventory.html");
+    }
 
 
     @BeforeMethod
-    public void setUp(){
-        ChromeOptions options= new ChromeOptions();
+    public void setUp() {
+        ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized --guest");
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        driver=new ChromeDriver(options);
+        driver = new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
 
     }
 
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 
