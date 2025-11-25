@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.Wait;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-
 public class CheckoutOverviewPage {
     WebDriver driver;
     Wait<WebDriver> wait;
