@@ -22,7 +22,7 @@ public class ProductsTest {
 
     @BeforeMethod
     public void setUp() {
-
+        //
         // Initialize WebDriver and  productpage
         ChromeOptions options= new ChromeOptions();
         options.addArguments("--start-maximized --guest");
