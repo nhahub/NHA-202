@@ -4,54 +4,41 @@ import Bot.ActionsBot;
 import Bot.WaitBots;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-
 public class CheckOutStepOne {
-    private final WebDriver driver;
+    private WebDriver driver;
     private ActionsBot actionsBot;
-    private WaitBots waitbot;
     private WebDriverWait wait;
 
     // Locators
-    private final By firstNameLocator = By.id("first-name");
-    private final By lastNameLocator = By.xpath("//*[@placeholder='Last Name']");
-    private final By zipCodeLocator = By.cssSelector("[data-test=postalCode]");
-    private final By continueButtonLocator = By.cssSelector("#continue");
-    private final By missingDataAlertLocator = By.xpath("//*[@data-test='error']");
+    private By firstName= By.id("first-name");
+    private By lastName= By.xpath("//*[@placeholder='Last Name']");
+    private By zipCode= By.cssSelector("[data-test=postalCode]");
+    private By continueButton=  By.cssSelector("#continue");
 
-    public CheckOutStepOne(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.waitbot = new WaitBots(driver);
+
+    public CheckOutStepOne ( WebDriver driver){
+        this.driver=driver;
         this.actionsBot = new ActionsBot(driver);
     }
 
-    public CheckOutStepOne fillFirstName(String firstName) {
-        actionsBot.typing(firstNameLocator, firstName);
-        return this;
-    }
 
-    public CheckOutStepOne fillLastName(String lastName) {
-        actionsBot.typing(lastNameLocator, lastName);
-        return this;
-    }
+    public CheckOutStepOne fillFirstName(String userFirstName){
+        actionsBot.typing(firstName,userFirstName);
+    return this;}
+    public CheckOutStepOne secondName(String userSecondName){
+        actionsBot.typing(lastName,userSecondName);
+        return this;}
+    public CheckOutStepOne fillzipCode(String userZipCode){
+        actionsBot.typing(zipCode,userZipCode);
+        return this;}
 
-    public CheckOutStepOne fillZipCode(String zipCode) {
-        actionsBot.typing(zipCodeLocator, zipCode);
-        return this;
-    }
-
-    public CheckoutOverviewPage clickContinue() {
-        actionsBot.clicking(continueButtonLocator);
+    public CheckoutOverviewPage navigationalCheckOut(){
+        actionsBot.clicking(continueButton);
         return new CheckoutOverviewPage(driver, wait);
+
     }
-    public String missingDataAlertGetText() {
-        String errorMessage =
-                wait.until(ExpectedConditions.visibilityOfElementLocated(missingDataAlertLocator)).getText();
-        return errorMessage;
-    }
+
 
 }

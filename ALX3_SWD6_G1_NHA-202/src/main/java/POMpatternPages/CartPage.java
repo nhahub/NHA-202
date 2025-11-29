@@ -1,10 +1,12 @@
 package POMpatternPages;
 
+import Bot.ActionsBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -12,17 +14,19 @@ public class CartPage {
 
     WebDriver driver;
     WebDriverWait wait;
-// Locators
+    // Locators
     private final By cartItem = By.className("cart_item");
     private final By cartItemName = By.className("inventory_item_name");
     private final By cartItemPrice = By.className("inventory_item_price");
     private final By quantityField = By.cssSelector(".cart_quantity");
     private final By checkoutBtn = By.id("checkout");
+
     // Constructor
     public CartPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
+
     // Methods
     public int getCartItemsCount() {
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(cartItem));
@@ -60,8 +64,21 @@ public class CartPage {
     }
 
 
-
     public boolean isCheckoutButtonDisplayed() {
         return driver.findElement(checkoutBtn).isDisplayed();
+    }
+
+    //Suggested Method
+    public void Navigate(WebDriver driver) {
+        driver.get("https://www.saucedemo.com/");
+// Login
+        driver.findElement(By.id("user-name")).sendKeys("standard_user");
+        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("login-button")).click();
+// Add items to cart
+        driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
+        driver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
+
+        driver.findElement(By.className("shopping_cart_link")).click();
     }
 }

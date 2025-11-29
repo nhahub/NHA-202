@@ -27,7 +27,7 @@ public class ProductsTest {
         ChromeOptions options= new ChromeOptions();
         options.addArguments("--start-maximized --guest");
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         loginPage=new LoginPage(driver);
         productpage = new ProductsPage(driver);
         driver.navigate().to("https://www.saucedemo.com/");
@@ -35,7 +35,7 @@ public class ProductsTest {
     }
     @Test
     public void testAddProductsToCart() {
-        //
+
         //step 1:login page
         loginPage.setLogin("standard_user", "secret_sauce");
 
