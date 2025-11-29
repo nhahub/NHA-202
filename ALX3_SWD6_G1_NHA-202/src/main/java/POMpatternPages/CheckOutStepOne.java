@@ -48,7 +48,6 @@ public class CheckOutStepOne {
         actionsBot.clicking(continueButtonLocator);
         return new CheckoutOverviewPage(driver, wait);
     }
-
     public String missingDataAlertGetText() {
         String errorMessage =
                 wait.until(ExpectedConditions.visibilityOfElementLocated(missingDataAlertLocator)).getText();
