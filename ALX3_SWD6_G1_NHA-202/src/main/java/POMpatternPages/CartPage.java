@@ -1,5 +1,6 @@
 package POMpatternPages;
 
+import Bot.ActionsBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -67,6 +68,17 @@ public class CartPage {
         return driver.findElement(checkoutBtn).isDisplayed();
     }
 
+    //Suggested Method
+    public void Navigate(WebDriver driver) {
+        driver.get("https://www.saucedemo.com/");
+// Login
+        driver.findElement(By.id("user-name")).sendKeys("standard_user");
+        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("login-button")).click();
+// Add items to cart
+        driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
+        driver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
 
-
+        driver.findElement(By.className("shopping_cart_link")).click();
+    }
 }

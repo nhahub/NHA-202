@@ -7,10 +7,11 @@ import org.openqa.selenium.support.ui.Wait;
 
 import java.util.concurrent.atomic.AtomicReference;
 
-
 public class CheckoutOverviewPage {
     WebDriver driver;
     Wait<WebDriver> wait;
+
+    //Need to edit
     By firstItemPrice = By.xpath("//*[@id='checkout_summary_container']/div/div[1]/div[3]/div[2]/div[2]/div");
     By secondItemPrice = By.xpath("//*[@id='checkout_summary_container']/div/div[1]/div[4]/div[2]/div[2]/div");
     By itemsSubTotalPrice = By.xpath("//*[@class='summary_subtotal_label']");
@@ -77,6 +78,9 @@ public class CheckoutOverviewPage {
         return priceOfFirstItem + priceOfSecondItem;
     }
 
+    public String checkOutGetUrl(){
+        return driver.getCurrentUrl();
+    }
     public double CalculateFinalPrice() {
         return CalculateItemsTotal() + FindTax();
     }

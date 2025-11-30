@@ -28,7 +28,7 @@ public class LoginTest {
     public void LoginTC2() {
         new LoginPage(driver).
                 setLogin("locked_out_user", "secret_sauce").
-                validation("https://www.saucedemo.com/inventory.html");
+                validation("https://www.saucedemo.com/");
     }
 
     @Test
@@ -36,6 +36,7 @@ public class LoginTest {
         new LoginPage(driver).
                 setLogin("problem_user", "secret_sauce").
                 validation("https://www.saucedemo.com/inventory.html");
+
     }
 
 
@@ -47,7 +48,7 @@ public class LoginTest {
     }
 
 
-    @Test
+   @Test
     public void LoginTc5() {
         new LoginPage(driver).
                 setLogin("error_user", "secret_sauce").
@@ -62,6 +63,31 @@ public class LoginTest {
                 setLogin("visual_user", "secret_sauce").
                 validation("https://www.saucedemo.com/inventory.html");
     }
+
+        //invalid name and valid password
+    @Test
+    public void InvalidName() {
+        new LoginPage(driver).
+                setLogin("swag", "secret_sauce").
+                validation("https://www.saucedemo.com/inventory.html");
+    }
+
+    @Test
+//valid name and invalid password(case sensitivity using one capital letter)
+    public void InvalidPassword() {
+        new LoginPage(driver).
+                setLogin("standard_user", "Secret_sauce").
+                validation("https://www.saucedemo.com/inventory.html");
+    }
+@Test
+
+public void emptyName() {
+    new LoginPage(driver).
+            setLogin("", "Secret_sauce").
+            validation("https://www.saucedemo.com/inventory.html");
+
+}
+
 
 
     @BeforeMethod

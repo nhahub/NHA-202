@@ -9,14 +9,13 @@ import java.util.List;
 
 public class ProductsPage {
     WebDriver driver;
-    // Locators
 
-    By titleLocator = By.tagName("title");
-    By firstProductButton = By.xpath("//div[text()='Sauce Labs Backpack']/following-sibling::div/button");
-    By secondProductButton = By.xpath("//div[text()='Sauce Labs Bike Light']/following-sibling::div/button");
+    // Locators
+    By titleLocator = By.className("title");
+    By firstProductButton = By.xpath("//button[@name='add-to-cart-sauce-labs-backpack']");
+    By secondProductButton = By.xpath("//button[@name='add-to-cart-sauce-labs-bike-light']");
     By cartIcon = By.className("shopping_cart_link");
     By cartItems = By.className("cart_item");
-
 
     // Constructor
     public ProductsPage(WebDriver driver) {
@@ -24,10 +23,9 @@ public class ProductsPage {
     }
 
     public String getPageTitle() {
-        return driver.getTitle();
 
 
-
+        return driver.findElement(titleLocator).getText();
     }
 
     public void addFirstProductToCart() {
