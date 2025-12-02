@@ -24,7 +24,7 @@ public class CheckoutOverviewTest {
     @Test
     public void testCalculatingPrices() {
         CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver, wait);
-        checkoutOverviewPage.navigate();
+        checkoutOverviewPage.navigatelogin();
         //This method is used to assert that calculation of both items' prices is equal to items total
         Assert.assertEquals(
                 checkoutOverviewPage.CalculateItemsTotal(),
@@ -37,13 +37,13 @@ public class CheckoutOverviewTest {
     @Test
     public void testEnsuringFirstItemNameWithBot() {
         CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver, wait);
-        checkoutOverviewPage.navigate();
+        checkoutOverviewPage.navigatelogin();
         Assert.assertEquals(checkoutOverviewPage.getFirstItemNameWithBot(), checkoutOverviewPage.firstItemName);
     }
     @Test
     public void testEnsuringSecondItemNameWithBot() {
         CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver, wait);
-        checkoutOverviewPage.navigate();
+        checkoutOverviewPage.navigatelogin();
         Assert.assertEquals(checkoutOverviewPage.getSecondItemNameWithBot(), checkoutOverviewPage.secondItemName);
     }
     @AfterMethod

@@ -1,6 +1,7 @@
 package POMpatternTests;
 
 import POMpatternPages.CheckOutStepOne;
+import POMpatternPages.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,6 +18,7 @@ public class CheckOutStepOneTest {
     ChromeOptions options = new ChromeOptions();
     CheckOutStepOne copy;
 
+
     @BeforeMethod
     public void setup(){
         WebDriverManager.chromedriver().setup();
@@ -24,7 +26,17 @@ public class CheckOutStepOneTest {
         driver = new ChromeDriver(options);
         copy= new CheckOutStepOne(driver);
         driver.get("https://www.saucedemo.com/");
+        copy.CartNavigation("standard_user", "secret_sauce");
     }
+
+
+
+
+
+
+
+
+
     @Test
     public void emptyFirstNameInCheckOutStepOneTC1(){
         copy.fillFirstName("");
