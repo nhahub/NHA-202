@@ -68,7 +68,6 @@ public class CartPage {
         return driver.findElement(checkoutBtn).isDisplayed();
     }
 
-    //Suggested Method
     public void Navigate(WebDriver driver) {
         driver.get("https://www.saucedemo.com/");
 // Login

@@ -16,23 +16,23 @@ public class LoginTest {
 
     private WebDriver driver;
 
-
+//Login with Acceptance username and password
     @Test
-    public void LoginTC1() {
+    public void StandardUserLogin() {
         new LoginPage(driver).
                 setLogin("standard_user", "secret_sauce").
                 validation("https://www.saucedemo.com/inventory.html");
     }
 
     @Test
-    public void LoginTC2() {
+    public void lockedUserLogin() {
         new LoginPage(driver).
                 setLogin("locked_out_user", "secret_sauce").
                 validation("https://www.saucedemo.com/");
     }
 
     @Test
-    public void LoginTc3() {
+    public void problemUserLogin() {
         new LoginPage(driver).
                 setLogin("problem_user", "secret_sauce").
                 validation("https://www.saucedemo.com/inventory.html");
@@ -41,7 +41,7 @@ public class LoginTest {
 
 
     @Test
-    public void LoginTc4() {
+    public void PerformanceLogin() {
         new LoginPage(driver).
                 setLogin("performance_glitch_user", "secret_sauce").
                 validation("https://www.saucedemo.com/inventory.html");
@@ -49,7 +49,7 @@ public class LoginTest {
 
 
    @Test
-    public void LoginTc5() {
+    public void errorUserLogin() {
         new LoginPage(driver).
                 setLogin("error_user", "secret_sauce").
                 validation("https://www.saucedemo.com/inventory.html");
@@ -58,7 +58,7 @@ public class LoginTest {
 
     @Test
 
-    public void LoginTc6() {
+    public void visualUserLogin() {
         new LoginPage(driver).
                 setLogin("visual_user", "secret_sauce").
                 validation("https://www.saucedemo.com/inventory.html");
@@ -69,7 +69,7 @@ public class LoginTest {
     public void InvalidName() {
         new LoginPage(driver).
                 setLogin("swag", "secret_sauce").
-                validation("https://www.saucedemo.com/inventory.html");
+                validation("https://www.saucedemo.com/");
     }
 
     @Test
@@ -77,14 +77,14 @@ public class LoginTest {
     public void InvalidPassword() {
         new LoginPage(driver).
                 setLogin("standard_user", "Secret_sauce").
-                validation("https://www.saucedemo.com/inventory.html");
+                validation("https://www.saucedemo.com/");
     }
 @Test
 
 public void emptyName() {
     new LoginPage(driver).
             setLogin("", "Secret_sauce").
-            validation("https://www.saucedemo.com/inventory.html");
+            validation("https://www.saucedemo.com/");
 
 }
 

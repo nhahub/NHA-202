@@ -10,10 +10,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class CheckOutStepOne {
+
+
     private final WebDriver driver;
     private ActionsBot actionsBot;
     private WaitBots waitbot;
     private WebDriverWait wait;
+    private LoginPage loginPage;
+    private ProductsPage productsPage;
+    private CartPage cartPage;
 
     // Locators
     private final By firstNameLocator = By.id("first-name");
@@ -22,12 +27,29 @@ public class CheckOutStepOne {
     private final By continueButtonLocator = By.cssSelector("#continue");
     private final By missingDataAlertLocator = By.xpath("//*[@data-test='error']");
 
+    //Constructor
     public CheckOutStepOne(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.waitbot = new WaitBots(driver);
         this.actionsBot = new ActionsBot(driver);
+       this.loginPage=new LoginPage(driver);
+       this.productsPage= new ProductsPage(driver);
+        this.cartPage=new CartPage(driver);
     }
+
+    //navigation method
+    public void CartNavigation(String userName, String pass){
+        loginPage.setLogin( userName, pass);
+        productsPage.addFirstProductToCart();
+
+
+
+    }
+
+
+
+
 
     public CheckOutStepOne fillFirstName(String firstName) {
         actionsBot.typing(firstNameLocator, firstName);

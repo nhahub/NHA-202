@@ -28,7 +28,7 @@ public class CheckoutOverviewPage {
         this.wait = wait;
     }
 
-    public void navigate() {
+    public void navigatelogin() {
         //Navigates to login
         String urlLogin = "https://www.saucedemo.com/";
         this.driver.navigate().to(urlLogin);
