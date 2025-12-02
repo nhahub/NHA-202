@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class CheckOutStepOneTest {
@@ -28,15 +29,6 @@ public class CheckOutStepOneTest {
         driver.get("https://www.saucedemo.com/");
         copy.CartNavigation("standard_user", "secret_sauce");
     }
-
-
-
-
-
-
-
-
-
     @Test
     public void emptyFirstNameInCheckOutStepOneTC1(){
         copy.fillFirstName("");
@@ -61,6 +53,13 @@ public class CheckOutStepOneTest {
         copy.fillZipCode("");
         copy.clickContinue();
         Assert.assertEquals(copy.missingDataAlertGetText(), "Error: Error: Postal Code is required");
+    }
+
+    @Test(dataProvider="CheckOutStepOneMissingField" ,dataProviderClass = TestData.class)
+    public void fillOneMissingField(String firstName,String lastName,String postalCode, String expectedErrorMessage){
+        copy.fillFirstName(firstName).fillLastName(lastName).fillZipCode(postalCode).clickContinue();
+        String actualError= copy.missingDataAlertGetText();
+        Assert.assertEquals(actualError,expectedErrorMessage);
     }
     @Test
     public void specialCharacterInFistNameCheckOutStepOneTC4(){

@@ -87,9 +87,6 @@ public void emptyName() {
             validation("https://www.saucedemo.com/");
 
 }
-
-
-
     @BeforeMethod
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
@@ -99,7 +96,6 @@ public void emptyName() {
         driver.get("https://www.saucedemo.com/");
 
     }
-
 
     @AfterMethod
     public void tearDown() {
