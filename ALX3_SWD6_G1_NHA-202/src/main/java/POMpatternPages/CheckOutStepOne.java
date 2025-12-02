@@ -33,8 +33,8 @@ public class CheckOutStepOne {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.waitbot = new WaitBots(driver);
         this.actionsBot = new ActionsBot(driver);
-       this.loginPage=new LoginPage(driver);
-       this.productsPage= new ProductsPage(driver);
+        this.loginPage=new LoginPage(driver);
+        this.productsPage= new ProductsPage(driver);
         this.cartPage=new CartPage(driver);
     }
 
@@ -43,13 +43,7 @@ public class CheckOutStepOne {
         loginPage.setLogin( userName, pass);
         productsPage.addFirstProductToCart();
 
-
-
     }
-
-
-
-
 
     public CheckOutStepOne fillFirstName(String firstName) {
         actionsBot.typing(firstNameLocator, firstName);
