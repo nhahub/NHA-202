@@ -20,7 +20,8 @@ public class CartPage {
     private final By cartItemName = By.className("inventory_item_name");
     private final By cartItemPrice = By.className("inventory_item_price");
     private final By quantityField = By.cssSelector(".cart_quantity");
-    private final By checkoutBtn = By.className("checkout");
+    private final By checkoutBtn = By.xpath("//*[@id='checkout']");
+    By cartIcon = By.className("shopping_cart_link");
 
     // Constructor
     public CartPage(WebDriver driver) {
@@ -62,12 +63,14 @@ public class CartPage {
 
     public String getFirstItemPrice() {
         actionsBot.getText(cartItemPrice);
-        return driver.findElement(cartItemPrice).getText();
+        //return driver.findElement(cartItemPrice).getText();
+        return driver.findElements(cartItemPrice).get(0).getText();
     }
 
     public String getSecondItemPrice() {
         actionsBot.getText(cartItemPrice);
-        return driver.findElement(cartItemPrice).getText();
+        //return driver.findElement(cartItemPrice).getText();
+        return driver.findElements(cartItemPrice).get(1).getText();
     }
 
     public int getFirstItemQuantity() {
@@ -89,4 +92,8 @@ public class CartPage {
         driver.findElement(checkoutBtn).click();
     }
 
+
+    public void goToCart() {
+        driver.findElement(cartIcon).click();
+    }
 }

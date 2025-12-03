@@ -13,10 +13,11 @@ public class CartTest {
 
     WebDriver driver;
     CartPage cart;
+    ChromeOptions options = new ChromeOptions();
 
     @BeforeClass
     public void setup() {
-        ChromeOptions options = new ChromeOptions();
+//        ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized --guest");
         driver = new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
@@ -56,6 +57,7 @@ public class CartTest {
         cart.clickCheckoutButton();
         Assert.assertTrue(driver.getCurrentUrl().contains("checkout-step-one.html"),
                 "Should navigate to checkout step one page");
+        cart.goToCart();
     }
 
 
