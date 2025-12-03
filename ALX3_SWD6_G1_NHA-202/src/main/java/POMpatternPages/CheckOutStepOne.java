@@ -33,9 +33,9 @@ public class CheckOutStepOne {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.waitbot = new WaitBots(driver);
         this.actionsBot = new ActionsBot(driver);
-       this.loginPage=new LoginPage(driver);
-       this.productsPage= new ProductsPage(driver);
-        this.cartPage=new CartPage(driver);
+//        this.loginPage=new LoginPage(driver);
+//        this.productsPage= new ProductsPage(driver);
+//        this.cartPage=new CartPage(driver);
     }
 
     //navigation method
@@ -43,13 +43,7 @@ public class CheckOutStepOne {
         loginPage.setLogin( userName, pass);
         productsPage.addFirstProductToCart();
 
-
-
     }
-
-
-
-
 
     public CheckOutStepOne fillFirstName(String firstName) {
         actionsBot.typing(firstNameLocator, firstName);
@@ -76,4 +70,26 @@ public class CheckOutStepOne {
         return errorMessage;
     }
 
+    //Suggested edit
+    public void navigate(){
+        //Navigates to login
+        String urlLogin = "https://www.saucedemo.com/";
+        this.driver.navigate().to(urlLogin);
+        LoginPage loginPage = new LoginPage(this.driver);
+        loginPage.setLogin("standard_user", "secret_sauce");
+
+
+        //Select Products
+        By firstProductButton = By.xpath("//button[@name='add-to-cart-sauce-labs-backpack']");
+        By secondProductButton = By.xpath("//button[@name='add-to-cart-sauce-labs-bike-light']");
+        By shoppingCart = By.xpath("//a[@data-test='shopping-cart-link']");
+        this.driver.findElement(firstProductButton).click();
+        this.driver.findElement(secondProductButton).click();
+        this.driver.findElement(shoppingCart).click();
+
+        //Check Cart
+        By checkouttButton = By.xpath("//button[@id='checkout']");
+        this.driver.findElement(checkouttButton).click();
+
+    }
 }
