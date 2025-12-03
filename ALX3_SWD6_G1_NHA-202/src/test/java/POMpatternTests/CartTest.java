@@ -1,7 +1,6 @@
 package POMpatternTests;
 
 import POMpatternPages.CartPage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,30 +13,17 @@ public class CartTest {
 
     WebDriver driver;
     CartPage cart;
+    ChromeOptions options = new ChromeOptions();
 
     @BeforeClass
     public void setup() {
-//        driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-//        driver.get("https://www.saucedemo.com/");
-//// Login
-//        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-//        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-//        driver.findElement(By.id("login-button")).click();
-//// Add items to cart
-//        driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
-//        driver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
-//
-//        driver.findElement(By.className("shopping_cart_link")).click();
-//        cart = new CartPage(driver);
-
-
-//Suggested edit CartTest
-        ChromeOptions options = new ChromeOptions();
+//        ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized --guest");
         driver = new ChromeDriver(options);
+        driver.get("https://www.saucedemo.com/");
+        driver.manage().window().maximize();
         cart = new CartPage(driver);
-        cart.Navigate(driver);
+        cart.navigateToCart("standard_user", "secret_sauce");
     }
 
     // Tests
@@ -63,7 +49,15 @@ public class CartTest {
 
     @Test
     public void verifyCheckoutButton() {
-        Assert.assertTrue(cart.isCheckoutButtonDisplayed(), "Checkout button should be visible");
+        Assert.assertTrue(cart.isCheckoutButtonDisplayed(), "Checkout button should be displayed");
+    }
+
+    @Test
+    public void proceedToCheckout() {
+        cart.clickCheckoutButton();
+        Assert.assertTrue(driver.getCurrentUrl().contains("checkout-step-one.html"),
+                "Should navigate to checkout step one page");
+        cart.goToCart();
     }
 
 

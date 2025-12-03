@@ -4,53 +4,73 @@ import Bot.ActionsBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 
 public class CartPage {
 
-    WebDriver driver;
-    WebDriverWait wait;
+    private final WebDriver driver;
+    private final LoginPage loginPage;
+    private final ProductsPage productsPage;
+    private final ActionsBot actionsBot;
+
+
     // Locators
     private final By cartItem = By.className("cart_item");
     private final By cartItemName = By.className("inventory_item_name");
     private final By cartItemPrice = By.className("inventory_item_price");
     private final By quantityField = By.cssSelector(".cart_quantity");
-    private final By checkoutBtn = By.id("checkout");
+    private final By checkoutBtn = By.xpath("//*[@id='checkout']");
+    By cartIcon = By.className("shopping_cart_link");
 
     // Constructor
     public CartPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.loginPage = new LoginPage(driver);
+        this.productsPage = new ProductsPage(driver);
+        this.actionsBot = new ActionsBot(driver);
+
     }
 
     // Methods
+    public void navigateToCart(String userName, String pass) {
+        loginPage.setLogin(userName, pass);
+        productsPage.addFirstProductToCart();
+        productsPage.addSecondProductToCart();
+        productsPage.goToCart();
+    }
+
+
     public int getCartItemsCount() {
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(cartItem));
+        actionsBot.getText(cartItem);
         return driver.findElements(cartItem).size();
+
+
     }
 
     public String getFirstItemName() {
-        List<WebElement> items = driver.findElements(cartItemName);
-        return !items.isEmpty() ? items.getFirst().getText() : null;
+        actionsBot.getText(cartItemName);
+        return driver.findElements(cartItemName).get(0).getText();
+
     }
 
+
     public String getSecondItemName() {
-        List<WebElement> items = driver.findElements(cartItemName);
-        return items.size() > 1 ? items.get(1).getText() : null;
+        actionsBot.getText(cartItemName);
+        return driver.findElements(cartItemName).get(1).getText();
+
     }
 
     public String getFirstItemPrice() {
-        List<WebElement> prices = driver.findElements(cartItemPrice);
-        return !prices.isEmpty() ? prices.getFirst().getText() : null;
+        actionsBot.getText(cartItemPrice);
+        //return driver.findElement(cartItemPrice).getText();
+        return driver.findElements(cartItemPrice).get(0).getText();
     }
 
     public String getSecondItemPrice() {
-        List<WebElement> prices = driver.findElements(cartItemPrice);
-        return prices.size() > 1 ? prices.get(1).getText() : null;
+        actionsBot.getText(cartItemPrice);
+        //return driver.findElement(cartItemPrice).getText();
+        return driver.findElements(cartItemPrice).get(1).getText();
     }
 
     public int getFirstItemQuantity() {
@@ -68,16 +88,12 @@ public class CartPage {
         return driver.findElement(checkoutBtn).isDisplayed();
     }
 
-    public void Navigate(WebDriver driver) {
-        driver.get("https://www.saucedemo.com/");
-// Login
-        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-        driver.findElement(By.id("login-button")).click();
-// Add items to cart
-        driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
-        driver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
+    public void clickCheckoutButton() {
+        driver.findElement(checkoutBtn).click();
+    }
 
-        driver.findElement(By.className("shopping_cart_link")).click();
+
+    public void goToCart() {
+        driver.findElement(cartIcon).click();
     }
 }
