@@ -19,8 +19,10 @@ public class CartTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized --guest");
         driver = new ChromeDriver(options);
+        driver.get("https://www.saucedemo.com/");
+        driver.manage().window().maximize();
         cart = new CartPage(driver);
-        cart.Navigate(driver);
+        cart.navigateToCart("standard_user", "secret_sauce");
     }
 
     // Tests
@@ -46,7 +48,14 @@ public class CartTest {
 
     @Test
     public void verifyCheckoutButton() {
-        Assert.assertTrue(cart.isCheckoutButtonDisplayed(), "Checkout button should be visible");
+        Assert.assertTrue(cart.isCheckoutButtonDisplayed(), "Checkout button should be displayed");
+    }
+
+    @Test
+    public void proceedToCheckout() {
+        cart.clickCheckoutButton();
+        Assert.assertTrue(driver.getCurrentUrl().contains("checkout-step-one.html"),
+                "Should navigate to checkout step one page");
     }
 
 
