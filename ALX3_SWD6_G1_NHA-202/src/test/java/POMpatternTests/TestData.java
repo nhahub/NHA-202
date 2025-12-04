@@ -29,7 +29,7 @@ public class TestData {
                 {"","Shalaby","03","Error: First Name is required"},
                 {"Abdelrahman","","03","Error: Last Name is required"},
                 {"Abdelrahman","Shalaby","","Error: Postal Code is required"}, //Suggested edit
-                //{"Abdelrahman","Shalaby","","Error: Error: Postal Code is required"},
+                {"Abdelrahman","Shalaby","","Error: Error: Postal Code is required"},
         };
     }
 
