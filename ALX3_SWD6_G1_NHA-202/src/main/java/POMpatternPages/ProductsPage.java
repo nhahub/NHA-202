@@ -1,14 +1,20 @@
 package POMpatternPages;
 
 
+import Bot.ActionsBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
 public class ProductsPage {
-    WebDriver driver;
+    private WebDriver driver;
+    private ActionsBot actionsBot;
+
+
+
 
     // Locators
     By titleLocator = By.className("title");
@@ -18,30 +24,38 @@ public class ProductsPage {
     By cartItems = By.className("cart_item");
 
     // Constructor
-    public ProductsPage(WebDriver driver) {
+
+    public ProductsPage (WebDriver driver) {
         this.driver = driver;
+       this.actionsBot = new ActionsBot(driver);
+
     }
+
 
     public String getPageTitle() {
-
-
         return driver.findElement(titleLocator).getText();
+
     }
 
-    public void addFirstProductToCart() {
-        driver.findElement(firstProductButton).click();
+    public  ProductsPage addFirstProductToCart() {
+        actionsBot.clicking(firstProductButton);
+        return this;
+
     }
 
-    public void addSecondProductToCart() {
-        driver.findElement(secondProductButton).click();
+    public  ProductsPage addSecondProductToCart() {
+        actionsBot.clicking(secondProductButton);
+        return this;
     }
 
     public void goToCart() {
-        driver.findElement(cartIcon).click();
+        actionsBot.clicking(cartIcon);
+
     }
 
     public List<WebElement> getCartItems() {
         return driver.findElements(cartItems);
+
     }
 
 }
