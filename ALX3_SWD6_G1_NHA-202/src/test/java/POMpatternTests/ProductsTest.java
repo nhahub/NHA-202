@@ -41,9 +41,9 @@ public class ProductsTest {
 
         // Step 2: Verify Products are Displayed
         String title =  productpage.getPageTitle();
-        Assert.assertTrue(title.contains("Products"), "Page title does not contain 'Products'");
+        Assert.assertTrue(title.contains("Products"), "Products page is displayed");
 
-        // Step 3: Add Products to Cart
+       // Step 3: Add Products to Cart
         productpage.addFirstProductToCart();
         productpage.addSecondProductToCart();
 
@@ -56,13 +56,13 @@ public class ProductsTest {
 
     }
 
-
+/*
     @AfterMethod
     public void tearDown() {
         // Close the browser
         if (driver != null) {
             driver.quit();
         }
-    }
+    }*/
 
 }

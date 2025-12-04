@@ -32,10 +32,7 @@ public class ProductsPage {
     }
 
 
-    public String getPageTitle() {
-        return driver.findElement(titleLocator).getText();
 
-    }
 
     public  ProductsPage addFirstProductToCart() {
         actionsBot.clicking(firstProductButton);
@@ -46,6 +43,13 @@ public class ProductsPage {
     public  ProductsPage addSecondProductToCart() {
         actionsBot.clicking(secondProductButton);
         return this;
+    }
+    public String getPageTitle() {
+        System.out.println("Products page are displayed");
+        return driver.findElement(titleLocator).getText();
+
+
+
     }
 
     public void goToCart() {
