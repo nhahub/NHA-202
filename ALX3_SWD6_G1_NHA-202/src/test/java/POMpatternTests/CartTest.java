@@ -4,7 +4,6 @@ import POMpatternPages.CartPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -17,30 +16,22 @@ public class CartTest {
 
     @BeforeClass
     public void setup() {
-//        driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-//        driver.get("https://www.saucedemo.com/");
-//// Login
-//        driver.findElement(By.id("user-name")).sendKeys("standard_user");
-//        driver.findElement(By.id("password")).sendKeys("secret_sauce");
-//        driver.findElement(By.id("login-button")).click();
-//// Add items to cart
-//        driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
-//        driver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
-//
-//        driver.findElement(By.className("shopping_cart_link")).click();
-//        cart = new CartPage(driver);
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://www.saucedemo.com/");
+// Login
+        driver.findElement(By.id("user-name")).sendKeys("standard_user");
+        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("login-button")).click();
+// Add items to cart
+        driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
+        driver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
 
+        driver.findElement(By.className("shopping_cart_link")).click();
 
-//Suggested edit CartTest
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized --guest");
-        driver = new ChromeDriver(options);
         cart = new CartPage(driver);
-        cart.Navigate(driver);
     }
-
-    // Tests
+        // Tests
     @Test
     public void verifyTotalItemsInCart() {
         Assert.assertEquals(cart.getCartItemsCount(), 2, "Cart should have 2 items");

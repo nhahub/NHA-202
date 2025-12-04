@@ -15,20 +15,20 @@ import org.testng.annotations.Test;
 
 public class ProductsTest {
 
-    WebDriver driver;
-    LoginPage loginPage;
-    ProductsPage productpage;
+   private WebDriver driver;
+    private LoginPage loginPage;
+    private ProductsPage productpage;
+
 
 
     @BeforeMethod
     public void setUp() {
-        //
         // Initialize WebDriver and  productpage
         ChromeOptions options= new ChromeOptions();
         options.addArguments("--start-maximized --guest");
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         driver = new ChromeDriver(options);
-        loginPage=new LoginPage(driver);
+        loginPage = new LoginPage(driver);
         productpage = new ProductsPage(driver);
         driver.navigate().to("https://www.saucedemo.com/");
 
@@ -49,7 +49,7 @@ public class ProductsTest {
 
         // Step 4: Go to Cart and Verify Total Number of Items in Cart
         productpage.goToCart();
-        Assert.assertEquals(productpage.getCartItems().size(), 2,"Cart does not contain 2 items");
+        Assert.assertEquals(productpage.getCartItems().size(), 2,"Cart contains 2 items");
 
 
         System.out.println("Test passed: 2 items added to the cart.");

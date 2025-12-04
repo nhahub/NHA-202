@@ -77,7 +77,6 @@ public class CartPage {
 // Add items to cart
         driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
         driver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
-
         driver.findElement(By.className("shopping_cart_link")).click();
     }
 }
