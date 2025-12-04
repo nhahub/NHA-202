@@ -10,61 +10,30 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.List;
-
 public class LoginTest {
 
     private WebDriver driver;
+    LoginPage copy= new LoginPage(driver);
 
 //Login with Acceptance username and password
-    @Test
-    public void StandardUserLogin() {
-        new LoginPage(driver).
-                setLogin("standard_user", "secret_sauce").
-                validation("https://www.saucedemo.com/inventory.html");
-    }
+    @Test(dataProvider ="loginValidData", dataProviderClass = TestData.class)
+    public void loginValidCredentials(String userName, String password){
+        copy.setLogin(userName,password);
+        String pageURL= driver.getCurrentUrl();
+        Assert.assertEquals(pageURL,"https://www.saucedemo.com/inventory.html");
 
-    @Test
-    public void lockedUserLogin() {
-        new LoginPage(driver).
-                setLogin("locked_out_user", "secret_sauce").
-                validation("https://www.saucedemo.com/");
-    }
 
-    @Test
-    public void problemUserLogin() {
-        new LoginPage(driver).
-                setLogin("problem_user", "secret_sauce").
-                validation("https://www.saucedemo.com/inventory.html");
 
     }
 
+    //invalid name and valid password
 
-    @Test
-    public void PerformanceLogin() {
-        new LoginPage(driver).
-                setLogin("performance_glitch_user", "secret_sauce").
-                validation("https://www.saucedemo.com/inventory.html");
+    @Test(dataProvider = "loginInvalidData",dataProviderClass = TestData.class)
+    public void loginInvalidCredentials(String userName, String password){
+        copy.setLogin(userName,password);
+        String pageURL= driver.getCurrentUrl();
+        Assert.assertNotEquals(pageURL,"https://www.saucedemo.com/inventory.html");
     }
-
-
-   @Test
-    public void errorUserLogin() {
-        new LoginPage(driver).
-                setLogin("error_user", "secret_sauce").
-                validation("https://www.saucedemo.com/inventory.html");
-    }
-
-
-    @Test
-
-    public void visualUserLogin() {
-        new LoginPage(driver).
-                setLogin("visual_user", "secret_sauce").
-                validation("https://www.saucedemo.com/inventory.html");
-    }
-
-        //invalid name and valid password
     @Test
     public void InvalidName() {
         new LoginPage(driver).
