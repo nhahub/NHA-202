@@ -15,6 +15,7 @@ import java.util.List;
 public class LoginTest {
 
     private WebDriver driver;
+    LoginPage copy = new LoginPage(driver);
 
 //Login with Acceptance username and password
     @Test
@@ -62,6 +63,10 @@ public class LoginTest {
         new LoginPage(driver).
                 setLogin("visual_user", "secret_sauce").
                 validation("https://www.saucedemo.com/inventory.html");
+    }
+    @Test(dataProvider = "loginValidData",dataProviderClass = TestData.class)
+    public void loginUsingValidCredentials(String userName, String password){
+        copy.setLogin(userName,password).validation("https://www.saucedemo.com/inventory.html");
     }
 
         //invalid name and valid password
