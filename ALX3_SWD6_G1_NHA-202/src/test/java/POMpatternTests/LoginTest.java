@@ -15,78 +15,21 @@ import java.util.List;
 public class LoginTest {
 
     private WebDriver driver;
+    LoginPage copy = new LoginPage(driver);
 
-//Login with Acceptance username and password
-    @Test
-    public void StandardUserLogin() {
-        new LoginPage(driver).
-                setLogin("standard_user", "secret_sauce").
-                validation("https://www.saucedemo.com/inventory.html");
+    //Login with Acceptance username and password
+
+    @Test(dataProvider = "loginValidData",dataProviderClass = TestData.class)
+    public void loginUsingValidCredentials(String userName, String password){
+        copy.setLogin(userName,password).validation("https://www.saucedemo.com/inventory.html");
     }
 
-    @Test
-    public void lockedUserLogin() {
-        new LoginPage(driver).
-                setLogin("locked_out_user", "secret_sauce").
-                validation("https://www.saucedemo.com/");
+    //invalid name and valid password
+    @Test(dataProvider = "loginInvalidData",dataProviderClass = TestData.class)
+    public void loginUsingInvalidCredentials(String userName, String password){
+        copy.setLogin(userName, password).validation("https://www.saucedemo.com/");
     }
 
-    @Test
-    public void problemUserLogin() {
-        new LoginPage(driver).
-                setLogin("problem_user", "secret_sauce").
-                validation("https://www.saucedemo.com/inventory.html");
-
-    }
-
-
-    @Test
-    public void PerformanceLogin() {
-        new LoginPage(driver).
-                setLogin("performance_glitch_user", "secret_sauce").
-                validation("https://www.saucedemo.com/inventory.html");
-    }
-
-
-   @Test
-    public void errorUserLogin() {
-        new LoginPage(driver).
-                setLogin("error_user", "secret_sauce").
-                validation("https://www.saucedemo.com/inventory.html");
-    }
-
-
-    @Test
-
-    public void visualUserLogin() {
-        new LoginPage(driver).
-                setLogin("visual_user", "secret_sauce").
-                validation("https://www.saucedemo.com/inventory.html");
-    }
-
-        //invalid name and valid password
-    @Test
-    public void InvalidName() {
-        new LoginPage(driver).
-                setLogin("swag", "secret_sauce").
-                validation("https://www.saucedemo.com/");
-    }
-
-    @Test
-//valid name and invalid password(case sensitivity using one capital letter)
-    public void InvalidPassword() {
-        new LoginPage(driver).
-                setLogin("standard_user", "Secret_sauce").
-                validation("https://www.saucedemo.com/");
-    }
-@Test
-
-public void emptyName() {
-    new LoginPage(driver).
-            setLogin("", "Secret_sauce").
-            validation("https://www.saucedemo.com/");
-
-}
     @BeforeMethod
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
