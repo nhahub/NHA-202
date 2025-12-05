@@ -4,10 +4,12 @@ import Bot.ActionsBot;
 import Bot.WaitBots;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class CheckOutStepOne {
 
@@ -26,6 +28,7 @@ public class CheckOutStepOne {
     private final By zipCodeLocator = By.cssSelector("[data-test=postalCode]");
     private final By continueButtonLocator = By.cssSelector("#continue");
     private final By missingDataAlertLocator = By.xpath("//*[@data-test='error']");
+    private final By wrongDataTypeAlertLocator = By.xpath("//*[@data-test='error']");
 
     //Constructor
     public CheckOutStepOne(WebDriver driver) {
@@ -69,6 +72,14 @@ public class CheckOutStepOne {
                 wait.until(ExpectedConditions.visibilityOfElementLocated(missingDataAlertLocator)).getText();
         return errorMessage;
     }
+
+    public boolean isAlertPresent(){
+        List<WebElement> elements= driver.findElements(wrongDataTypeAlertLocator);
+        return !elements.isEmpty();
+
+    }
+
+
 
     //Suggested edit
     public void navigate(){

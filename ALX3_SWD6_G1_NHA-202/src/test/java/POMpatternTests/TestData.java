@@ -32,6 +32,13 @@ public class TestData {
                 {"Abdelrahman","Shalaby","","Error: Error: Postal Code is required"},
         };
     }
+    @DataProvider(name="numbersAndSpecialCharacter")
+    public Object [][] usingNumbersAndSpecialCharacter(){
+        return new Object [][]{
+                {"Abdelrahman12@3","Shalaby@123","adg@123"},
+        };
+
+    }
 
 
 }

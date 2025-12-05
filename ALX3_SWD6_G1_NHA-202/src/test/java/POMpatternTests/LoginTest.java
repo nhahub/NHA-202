@@ -15,7 +15,7 @@ import java.util.List;
 public class LoginTest {
 
     private WebDriver driver;
-    LoginPage copy = new LoginPage(driver);
+
 
     //Login with Acceptance username and password
 

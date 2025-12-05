@@ -12,50 +12,26 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class CheckOutStepOneTest {
     WebDriver driver;
     WebDriverWait wait;
     ChromeOptions options = new ChromeOptions();
     CheckOutStepOne copy;
+    SoftAssert softAssert=new SoftAssert();
 
 
     @BeforeMethod
     public void setup(){
         //WebDriverManager.chromedriver().setup(); //Suggested edit
-        //options.addArguments("--start-maximized --disable-notifications"); //Suggested edit
+
         options.addArguments("--start-maximized --guest");
         driver = new ChromeDriver(options);
         copy= new CheckOutStepOne(driver);
 //        driver.get("https://www.saucedemo.com/"); //Suggested edit
 //        copy.CartNavigation("standard_user", "secret_sauce"); //Suggested edit
         copy.navigate(); //Suggested edit
-    }
-    @Test
-    public void emptyFirstNameInCheckOutStepOneTC1(){
-        copy.fillFirstName("");
-        copy.fillLastName("Shalaby");
-        copy.fillZipCode("03");
-        copy.clickContinue();
-        Assert.assertEquals(copy.missingDataAlertGetText(),"Error: First Name is required");
-    }
-
-    @Test
-    public void emptyLastNameInCheckOutStepOneTC2() {
-        copy.fillFirstName("Abdelrahman");
-        copy.fillLastName("");
-        copy.fillZipCode("03");
-        copy.clickContinue();
-        Assert.assertEquals(copy.missingDataAlertGetText(), "Error: Last Name is required");
-    }
-    @Test
-    public void emptyPostalCodeInCheckOutStepOneTC3() {
-        copy.fillFirstName("Abdelrahman");
-        copy.fillLastName("Shalaby");
-        copy.fillZipCode("");
-        copy.clickContinue();
-        Assert.assertEquals(copy.missingDataAlertGetText(), "Error: Postal Code is required"); //Suggested edit
-        //Assert.assertEquals(copy.missingDataAlertGetText(), "Error: Error: Postal Code is required");
     }
 
     @Test(dataProvider="CheckOutStepOneMissingField" ,dataProviderClass = TestData.class)
@@ -64,13 +40,13 @@ public class CheckOutStepOneTest {
         String actualError= copy.missingDataAlertGetText();
         Assert.assertEquals(actualError,expectedErrorMessage);
     }
-    @Test
-    public void specialCharacterInFistNameCheckOutStepOneTC4(){
-        copy.fillFirstName("#@#$");
-        copy.fillLastName("Shalaby");
-        copy.fillZipCode("03");
-        copy.clickContinue();
-        //Assert.assertEquals(copy.missingDataAlertGetText(),"Error: First Name is only alphabet");
+    @Test(dataProvider ="numbersAndSpecialCharacter", dataProviderClass = TestData.class)
+    public void UsingSpecialCharacterInFirstAndLastNameAndPostalCode(String firstName,String lastName,String postalCode){
+        copy.fillFirstName(firstName).fillLastName(lastName).fillZipCode(postalCode).clickContinue();
+        softAssert.assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/checkout-step-one.html","All fields accept special character");
+        softAssert.assertEquals(copy.isAlertPresent(),true,"  Alert not Found");
+        softAssert.assertAll();
+
     }
     @Test
     public void validLogInCredentialsInCheckOutStepOneTC5() {
