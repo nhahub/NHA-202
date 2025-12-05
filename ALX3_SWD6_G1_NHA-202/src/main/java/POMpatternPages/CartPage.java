@@ -68,6 +68,9 @@ public class CartPage {
         return driver.findElement(checkoutBtn).isDisplayed();
     }
 
+    public void clickCheckButton(){wait.until(ExpectedConditions.elementToBeClickable(checkoutBtn)).click();
+    }
+
     public void Navigate(WebDriver driver) {
         driver.get("https://www.saucedemo.com/");
 // Login
@@ -77,6 +80,6 @@ public class CartPage {
 // Add items to cart
         driver.findElement(By.id("add-to-cart-sauce-labs-backpack")).click();
         driver.findElement(By.id("add-to-cart-sauce-labs-bike-light")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(checkoutBtn)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(checkoutBtn)).click();
     }
 }

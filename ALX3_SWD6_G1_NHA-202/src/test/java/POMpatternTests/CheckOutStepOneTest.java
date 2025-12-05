@@ -19,8 +19,13 @@ import org.testng.asserts.SoftAssert;
 public class CheckOutStepOneTest {
     WebDriver driver;
     WebDriverWait wait;
+    LoginPage loginPage;
+    ProductsPage productsPage;
+    CartPage cartPage;
+    CheckOutStepOne checkOutStepOne;
+
+
     ChromeOptions options = new ChromeOptions();
-    CheckOutStepOne copy;
     SoftAssert softAssert=new SoftAssert();
 
 
@@ -30,29 +35,40 @@ public class CheckOutStepOneTest {
         WebDriverManager.chromedriver().setup();
         options.addArguments("--start-maximized --guest");
         driver = new ChromeDriver(options);
-        new CartPage(driver).Navigate(driver);
+        loginPage = new LoginPage(driver);
+        productsPage = new ProductsPage(driver);
+        cartPage = new CartPage(driver);
+        checkOutStepOne = new CheckOutStepOne(driver);
+        driver.get("https://www.saucedemo.com/");
+        loginPage.setLogin("standard_user","secret_sauce");
+        productsPage.addFirstProductToCart().addSecondProductToCart().goToCart();
+        cartPage.clickCheckButton();
        // copy= new CheckOutStepOne(driver);
+    }
+
+    @Test
+    public void validLogInCredentialsInCheckOutStepOneTC5() {
+
+        String pageTitle = new CheckOutStepOne(driver).fillFirstName("Abdelrahman").fillLastName("Shalaby").fillZipCode("03").clickContinue().checkOutGetUrl();
+        Assert.assertEquals(pageTitle,"https://www.saucedemo.com/checkout-step-two.html");
     }
 
     @Test(dataProvider="CheckOutStepOneMissingField" ,dataProviderClass = TestData.class)
     public void fillOneMissingField(String firstName,String lastName,String postalCode, String expectedErrorMessage){
-        copy.fillFirstName(firstName).fillLastName(lastName).fillZipCode(postalCode).clickContinue();
-        String actualError= copy.missingDataAlertGetText();
+        checkOutStepOne.fillFirstName(firstName).fillLastName(lastName).fillZipCode(postalCode).clickContinue();
+        String actualError= checkOutStepOne.missingDataAlertGetText();
         Assert.assertEquals(actualError,expectedErrorMessage);
+        System.out.println(" all is good ");
     }
     @Test(dataProvider ="numbersAndSpecialCharacter", dataProviderClass = TestData.class)
     public void UsingSpecialCharacterInFirstAndLastNameAndPostalCode(String firstName,String lastName,String postalCode){
-        copy.fillFirstName(firstName).fillLastName(lastName).fillZipCode(postalCode).clickContinue();
+        checkOutStepOne.fillFirstName(firstName).fillLastName(lastName).fillZipCode(postalCode).clickContinue();
         softAssert.assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/checkout-step-one.html","All fields accept special character");
-        softAssert.assertEquals(copy.isAlertPresent(),true,"  Alert not Found");
+        softAssert.assertEquals(checkOutStepOne.isAlertPresent(),true,"  Alert not Found");
         softAssert.assertAll();
 
     }
-    @Test
-    public void validLogInCredentialsInCheckOutStepOneTC5() {
-        String pageTitle =copy.fillFirstName("Abdelrahman").fillLastName("Shalaby").fillZipCode("03").clickContinue().checkOutGetUrl();
-        Assert.assertEquals(pageTitle,"https://www.saucedemo.com/checkout-step-two.html");
-    }
+
     @AfterMethod
     public void tearDown(){driver.quit();}
 }
