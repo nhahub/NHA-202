@@ -15,16 +15,15 @@ import org.testng.annotations.Test;
 
 public class ProductsTest {
 
-   private WebDriver driver;
+    private WebDriver driver;
     private LoginPage loginPage;
     private ProductsPage productpage;
-
 
 
     @BeforeMethod
     public void setUp() {
         // Initialize WebDriver and  productpage
-        ChromeOptions options= new ChromeOptions();
+        ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized --guest");
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
         driver = new ChromeDriver(options);
@@ -33,6 +32,7 @@ public class ProductsTest {
         driver.navigate().to("https://www.saucedemo.com/");
 
     }
+
     @Test
     public void testAddProductsToCart() {
 
@@ -40,29 +40,29 @@ public class ProductsTest {
         loginPage.setLogin("standard_user", "secret_sauce");
 
         // Step 2: Verify Products are Displayed
-        String title =  productpage.getPageTitle();
+        String title = productpage.getPageTitle();
         Assert.assertTrue(title.contains("Products"), "Products page is displayed");
 
-       // Step 3: Add Products to Cart
+        // Step 3: Add Products to Cart
         productpage.addFirstProductToCart();
         productpage.addSecondProductToCart();
 
         // Step 4: Go to Cart and Verify Total Number of Items in Cart
         productpage.goToCart();
-        Assert.assertEquals(productpage.getCartItems().size(), 2,"Cart contains 2 items");
+        Assert.assertEquals(productpage.getCartItems().size(), 2, "Cart contains 2 items");
 
 
         System.out.println("Test passed: 2 items added to the cart.");
 
     }
 
-/*
+
     @AfterMethod
     public void tearDown() {
         // Close the browser
-        if (driver != null) {
+       // if (driver != null) {
             driver.quit();
-        }
-    }*/
+        //}
 
+    }
 }
