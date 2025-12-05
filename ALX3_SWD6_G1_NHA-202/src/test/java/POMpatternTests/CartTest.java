@@ -2,8 +2,10 @@ package POMpatternTests;
 
 import POMpatternPages.CartPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -16,8 +18,10 @@ public class CartTest {
 
     @BeforeClass
     public void setup() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        ChromeOptions options= new ChromeOptions();
+        options.addArguments("--start-maximized --guest");
+        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        driver = new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
 // Login
         driver.findElement(By.id("user-name")).sendKeys("standard_user");

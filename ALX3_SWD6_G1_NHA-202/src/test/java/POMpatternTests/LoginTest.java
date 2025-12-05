@@ -21,13 +21,17 @@ public class LoginTest {
 
     @Test(dataProvider = "loginValidData",dataProviderClass = TestData.class)
     public void loginUsingValidCredentials(String userName, String password){
-        copy.setLogin(userName,password).validation("https://www.saucedemo.com/inventory.html");
+       new LoginPage(driver)
+               .setLogin(userName,password)
+               .validation("https://www.saucedemo.com/inventory.html");
     }
 
     //invalid name and valid password
     @Test(dataProvider = "loginInvalidData",dataProviderClass = TestData.class)
     public void loginUsingInvalidCredentials(String userName, String password){
-        copy.setLogin(userName, password).validation("https://www.saucedemo.com/");
+         new LoginPage(driver)
+                .setLogin(userName, password)
+                .validation("https://www.saucedemo.com/");
     }
 
     @BeforeMethod
