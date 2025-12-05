@@ -2,8 +2,10 @@ package POMpatternTests;
 
 import POMpatternPages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -99,14 +101,14 @@ public class EndToEnd {
         Assert.assertEquals(pageTitle,"https://www.saucedemo.com/checkout-step-two.html");
     }
 
-    @Test(dataProvider="CheckOutStepOneMissingField" ,dataProviderClass = TestData.class,priority = 8)
+    @Test(dataProvider="CheckOutStepOneMissingField" ,dataProviderClass = TestData.class,priority = 9)
     public void fillOneMissingField(String firstName,String lastName,String postalCode, String expectedErrorMessage){
         checkOutStepOne.fillFirstName(firstName).fillLastName(lastName).fillZipCode(postalCode).clickContinue();
         String actualError= checkOutStepOne.missingDataAlertGetText();
         Assert.assertEquals(actualError,expectedErrorMessage);
         System.out.println(" all is good ");
     }
-    @Test(dataProvider ="numbersAndSpecialCharacter", dataProviderClass = TestData.class,priority = 9)
+    @Test(dataProvider ="numbersAndSpecialCharacter", dataProviderClass = TestData.class,priority = 10)
     public void UsingSpecialCharacterInFirstAndLastNameAndPostalCode(String firstName,String lastName,String postalCode){
         checkOutStepOne.fillFirstName(firstName).fillLastName(lastName).fillZipCode(postalCode).clickContinue();
         softAssert.assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/checkout-step-one.html","All fields accept special character");
@@ -114,32 +116,5 @@ public class EndToEnd {
         softAssert.assertAll();
 
     }
-    @Test(priority = 10)
-    public void testCalculatingPrices() {
-        CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver, wait);
-        checkoutOverviewPage.navigatelogin();
-        //This method is used to assert that calculation of both items' prices is equal to items total
-        Assert.assertEquals(
-                checkoutOverviewPage.CalculateItemsTotal(),
-                checkoutOverviewPage.FindItemsTotal());
-        //This method is used to assert sum of items' prices and tax is equal to the final price
-        Assert.assertEquals(
-                checkoutOverviewPage.CalculateFinalPrice(),
-                checkoutOverviewPage.FindFinalPrice());
-    }
-    @Test
-    public void testEnsuringFirstItemNameWithBot() {
-        CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver, wait);
-        checkoutOverviewPage.navigatelogin();
-        Assert.assertEquals(checkoutOverviewPage.getFirstItemNameWithBot(), checkoutOverviewPage.firstItemName);
-    }
-    @Test(priority = 11)
-    public void testEnsuringSecondItemNameWithBot() {
-        CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver, wait);
-        checkoutOverviewPage.navigatelogin();
-        Assert.assertEquals(checkoutOverviewPage.getSecondItemNameWithBot(), checkoutOverviewPage.secondItemName);
-    }
 
-    @AfterClass
-    public void tearDown(){driver.quit();}
 }

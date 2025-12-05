@@ -3,6 +3,7 @@ package POMpatternPages;
 import Bot.ActionsBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 
 import java.util.concurrent.atomic.AtomicReference;
@@ -90,6 +91,11 @@ public class CheckoutOverviewPage {
         ActionsBot actionsBot = new ActionsBot(driver);
         By firstItemName = By.xpath("//*[@id='item_4_title_link']/div");
         return actionsBot.getText(firstItemName);
+    }
+
+    public void clickFinish(){
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("finish")))).click();
+
     }
 
     public String getSecondItemNameWithBot() {
