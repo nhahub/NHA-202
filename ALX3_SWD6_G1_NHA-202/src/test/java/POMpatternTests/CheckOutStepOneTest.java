@@ -1,7 +1,9 @@
 package POMpatternTests;
 
+import POMpatternPages.CartPage;
 import POMpatternPages.CheckOutStepOne;
 import POMpatternPages.LoginPage;
+import POMpatternPages.ProductsPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,14 +26,12 @@ public class CheckOutStepOneTest {
 
     @BeforeMethod
     public void setup(){
-        //WebDriverManager.chromedriver().setup(); //Suggested edit
 
+        WebDriverManager.chromedriver().setup();
         options.addArguments("--start-maximized --guest");
         driver = new ChromeDriver(options);
-        copy= new CheckOutStepOne(driver);
-//        driver.get("https://www.saucedemo.com/"); //Suggested edit
-//        copy.CartNavigation("standard_user", "secret_sauce"); //Suggested edit
-        copy.navigate(); //Suggested edit
+        new CartPage(driver).Navigate(driver);
+       // copy= new CheckOutStepOne(driver);
     }
 
     @Test(dataProvider="CheckOutStepOneMissingField" ,dataProviderClass = TestData.class)
