@@ -104,7 +104,4 @@ public class CheckoutOverviewPage {
         return actionsBot.getText(secondItemName);
     }
 
-    public void justToTryCommit(){
-
-    }
 }
