@@ -1,6 +1,8 @@
 package POMpatternTests;
+
 import POMpatternPages.LoginPage;
 import POMpatternPages.ProductsPage;
+import ParallelExecution.BaseTest;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,17 +13,29 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
-
-
-public class ProductsTest {
+public class ProductsTest extends BaseTest {
 
     private WebDriver driver;
     private LoginPage loginPage;
     private ProductsPage productpage;
 
 
-    @BeforeMethod
-    public void setUp() {
+//    @BeforeMethod
+//    public void setUp() {
+//        // Initialize WebDriver and  productpage
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--start-maximized --guest");
+//        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+//        driver = new ChromeDriver(options);
+//        loginPage = new LoginPage(driver);
+//        productpage = new ProductsPage(driver);
+//        driver.navigate().to("https://www.saucedemo.com/");
+//
+//    }
+
+    @Override
+    protected void differentSetupMethod() {
+
         // Initialize WebDriver and  productpage
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized --guest");
@@ -35,6 +49,7 @@ public class ProductsTest {
 
     @Test
     public void testAddProductsToCart() {
+
 
         //step 1:login page
         loginPage.setLogin("standard_user", "secret_sauce");
@@ -57,12 +72,12 @@ public class ProductsTest {
     }
 
 
-    @AfterMethod
-    public void tearDown() {
-        // Close the browser
-       // if (driver != null) {
-            driver.quit();
-        //}
-
-    }
+//    @AfterMethod
+//    public void tearDown() {
+//        // Close the browser
+//       // if (driver != null) {
+//            driver.quit();
+//        //}
+//
+//    }
 }

@@ -1,25 +1,32 @@
 package POMpatternTests;
 
-import POMpatternPages.CheckoutOverviewPage;
+import POMpatternPages.*;
+import ParallelExecution.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class CheckoutOverviewTest {
-    WebDriver driver;
+public class CheckoutOverviewTest extends BaseTest{
+   // WebDriver driver;
     Wait<WebDriver> wait;
-    ChromeOptions options = new ChromeOptions();
+    //ChromeOptions options = new ChromeOptions();
 
-    @BeforeMethod
-    public void setup() {
-        options.addArguments("--start-maximized --guest");
-        driver = new ChromeDriver(options);
-    }
+//    @BeforeMethod
+//    public void setup() {
+//        options.addArguments("--start-maximized --guest");
+//        driver = new ChromeDriver(options);
+//    }
+
+//    CheckoutOverviewPage checkoutOverviewPage;
+
+//    @Override
+//    protected void differentSetupMethod(){
+//
+//        CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver, wait);
+//        checkoutOverviewPage.navigatelogin();
+//
+//    }
 
     @Test
     public void testCalculatingPrices() {
@@ -46,8 +53,8 @@ public class CheckoutOverviewTest {
         checkoutOverviewPage.navigatelogin();
         Assert.assertEquals(checkoutOverviewPage.getSecondItemNameWithBot(), checkoutOverviewPage.secondItemName);
     }
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void tearDown() {
+//        driver.quit();
+//    }
 }

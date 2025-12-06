@@ -4,7 +4,9 @@ import POMpatternPages.CartPage;
 import POMpatternPages.CheckOutStepOne;
 import POMpatternPages.LoginPage;
 import POMpatternPages.ProductsPage;
+import ParallelExecution.BaseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -16,8 +18,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class CheckOutStepOneTest {
-    WebDriver driver;
+public class CheckOutStepOneTest extends BaseTest {
+//    WebDriver driver;
     WebDriverWait wait;
     LoginPage loginPage;
     ProductsPage productsPage;
@@ -29,12 +31,27 @@ public class CheckOutStepOneTest {
     SoftAssert softAssert=new SoftAssert();
 
 
-    @BeforeMethod
-    public void setup(){
+//    @BeforeMethod
+//    public void setup(){
+//
+//        WebDriverManager.chromedriver().setup();
+//        options.addArguments("--start-maximized --guest");
+//        driver = new ChromeDriver(options);
+//        loginPage = new LoginPage(driver);
+//        productsPage = new ProductsPage(driver);
+//        cartPage = new CartPage(driver);
+//        checkOutStepOne = new CheckOutStepOne(driver);
+//        driver.get("https://www.saucedemo.com/");
+//        loginPage.setLogin("standard_user","secret_sauce");
+//        productsPage.addFirstProductToCart().addSecondProductToCart().goToCart();
+//        cartPage.clickCheckButton();
+//       // copy= new CheckOutStepOne(driver);
+//    }
 
-        WebDriverManager.chromedriver().setup();
-        options.addArguments("--start-maximized --guest");
-        driver = new ChromeDriver(options);
+
+    @Override
+    protected void differentSetupMethod(){
+
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
         cartPage = new CartPage(driver);
@@ -43,9 +60,8 @@ public class CheckOutStepOneTest {
         loginPage.setLogin("standard_user","secret_sauce");
         productsPage.addFirstProductToCart().addSecondProductToCart().goToCart();
         cartPage.clickCheckButton();
-       // copy= new CheckOutStepOne(driver);
-    }
 
+    }
     @Test
     public void validLogInCredentialsInCheckOutStepOneTC5() {
 
@@ -69,6 +85,6 @@ public class CheckOutStepOneTest {
 
     }
 
-    @AfterMethod
-    public void tearDown(){driver.quit();}
+//    @AfterMethod
+//    public void tearDown(){driver.quit();}
 }

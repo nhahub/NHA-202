@@ -1,21 +1,23 @@
 package POMpatternTests;
 
 import POMpatternPages.LoginPage;
+import ParallelExecution.BaseTest;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.List;
 
-public class LoginTest {
+public class LoginTest extends BaseTest {
 
-    private WebDriver driver;
-
+//    private WebDriver driver;
+@Override
+protected void differentSetupMethod(){
+    driver.get("https://www.saucedemo.com/");
+}
 
     //Login with Acceptance username and password
 
@@ -34,20 +36,20 @@ public class LoginTest {
                 .validation("https://www.saucedemo.com/");
     }
 
-    @BeforeMethod
-    public void setUp() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized --guest");
-        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        driver = new ChromeDriver(options);
-        driver.get("https://www.saucedemo.com/");
+//    @BeforeMethod
+//    public void setUp() {
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--start-maximized --guest");
+//        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+//        driver = new ChromeDriver(options);
+//        driver.get("https://www.saucedemo.com/");
+//
+//    }
 
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void tearDown() {
+//        driver.quit();
+//    }
 
 
 }

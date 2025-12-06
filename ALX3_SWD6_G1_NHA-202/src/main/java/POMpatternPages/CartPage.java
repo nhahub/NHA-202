@@ -71,7 +71,7 @@ public class CartPage {
     public void clickCheckButton(){wait.until(ExpectedConditions.elementToBeClickable(checkoutBtn)).click();
     }
 
-    public void Navigate(WebDriver driver) {
+    public void navigate(WebDriver driver) {
         driver.get("https://www.saucedemo.com/");
 // Login
         driver.findElement(By.id("user-name")).sendKeys("standard_user");

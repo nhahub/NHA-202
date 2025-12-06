@@ -1,0 +1,1 @@
+{"uuid":"4dc86abc-bb31-481d-84e2-0e6afe3c9de7","name":"POMpatternTests.LoginTest.setUp","children":["7a313529-48d3-44dc-b4fc-8f4eda995ddb"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1765054410195,"stop":1765054427765}],"afters":[],"start":1765054410195,"stop":1765054427765}
