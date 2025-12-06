@@ -11,7 +11,7 @@ public class CheckoutOverviewPage {
     WebDriver driver;
     Wait<WebDriver> wait;
 
-    //Need to edit
+
     By firstItemPrice = By.xpath("//*[@id='checkout_summary_container']/div/div[1]/div[3]/div[2]/div[2]/div");
     By secondItemPrice = By.xpath("//*[@id='checkout_summary_container']/div/div[1]/div[4]/div[2]/div[2]/div");
     By itemsSubTotalPrice = By.xpath("//*[@class='summary_subtotal_label']");
@@ -96,5 +96,9 @@ public class CheckoutOverviewPage {
         ActionsBot actionsBot = new ActionsBot(driver);
         By secondItemName = By.xpath("//*[@id='item_0_title_link']/div");
         return actionsBot.getText(secondItemName);
+    }
+
+    public void justToTryCommit(){
+
     }
 }
