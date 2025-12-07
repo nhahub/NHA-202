@@ -26,20 +26,29 @@ public class EndToEndPage {
         loginPage.setLogin("standard_user", "secret_sauce");
 
         //Select Products
-        bot.clicking(firstProductButton);
-        bot.clicking(secondProductButton);
-        bot.clicking(shoppingCart);
+//        bot.clicking(firstProductButton);
+//        bot.clicking(secondProductButton);
+//        bot.clicking(shoppingCart);
+        driver.findElement(firstProductButton).click();
+        driver.findElement(secondProductButton).click();
+        driver.findElement(shoppingCart).click();
 
         //Check Cart
-        bot.clicking(checkouttButton);
+//        bot.clicking(checkouttButton);
+        driver.findElement(checkouttButton).click();
 
         //Fill info
-        bot.typing(firstnameInput, "Abdelrahman");
-        bot.typing(lastnameInput, "Shalaby");
-        bot.typing(postalCodeInput, "1234");
-        bot.clicking(continueButton);
+//        bot.typing(firstnameInput, "Abdelrahman");
+//        bot.typing(lastnameInput, "Shalaby");
+//        bot.typing(postalCodeInput, "1234");
+//        bot.clicking(continueButton);
+        driver.findElement(firstnameInput).sendKeys("Abdelrahman");
+        driver.findElement(lastnameInput).sendKeys("Shalaby");
+        driver.findElement(postalCodeInput).sendKeys("1234");
+        driver.findElement(continueButton).click();
 
         //Complete Checkout
-        bot.clicking(finishButton);
+//        bot.clicking(finishButton);
+        driver.findElement(finishButton).click();
     }
 }
