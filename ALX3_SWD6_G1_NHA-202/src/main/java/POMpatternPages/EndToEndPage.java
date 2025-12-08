@@ -7,11 +7,11 @@ import org.openqa.selenium.WebDriver;
 public class EndToEndPage {
     WebDriver driver;
     String urlLogin = "https://www.saucedemo.com/";
-    ActionsBot bot = new ActionsBot(driver);
+    ActionsBot bot;
 
-    By username=By.id("user-name");
-    By password= By.id("password");
-    By loginButton=By.xpath("//input[@type='submit']");
+    By username = By.id("user-name");
+    By password = By.id("password");
+    By loginButton = By.xpath("//input[@type='submit']");
     By firstProductButton = By.xpath("//button[@name='add-to-cart-sauce-labs-backpack']");
     By secondProductButton = By.xpath("//button[@name='add-to-cart-sauce-labs-bike-light']");
     By shoppingCart = By.xpath("//a[@data-test='shopping-cart-link']");
@@ -25,50 +25,52 @@ public class EndToEndPage {
     public void endToEndScenario(WebDriver driver) {
 
         //Navigates to login
-//        driver.navigate().to(urlLogin);
-//
-//        bot.typing(username,"standard_user");
-//        bot.typing(password,"secret_sauce");
-//        bot.clicking(loginButton);
-//
-//        //Select Products
-//        bot.clicking(firstProductButton);
-//        bot.clicking(secondProductButton);
-//        bot.clicking(shoppingCart);
-//
-//        //Check Cart
-//        bot.clicking(checkouttButton);
-//
-//        //Fill info
-//        bot.typing(firstnameInput, "Abdelrahman");
-//        bot.typing(lastnameInput, "Shalaby");
-//        bot.typing(postalCodeInput, "1234");
-//        bot.clicking(continueButton);
-//
-//        //Complete Checkout
-//        bot.clicking(finishButton);
-
-
-        //Navigates to login
         driver.navigate().to(urlLogin);
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.setLogin("standard_user", "secret_sauce");
+        bot = new ActionsBot(driver);
+
+        //Fill login fields
+        bot.typing(username, "standard_user");
+        bot.typing(password, "secret_sauce");
+        bot.clicking(loginButton);
 
         //Select Products
-        driver.findElement(firstProductButton).click();
-        driver.findElement(secondProductButton).click();
-        driver.findElement(shoppingCart).click();
+        bot.clicking(firstProductButton);
+        bot.clicking(secondProductButton);
+        bot.clicking(shoppingCart);
 
         //Check Cart
-        driver.findElement(checkouttButton).click();
+        bot.clicking(checkouttButton);
 
         //Fill info
-        driver.findElement(firstnameInput).sendKeys("Abdelrahman");
-        driver.findElement(lastnameInput).sendKeys("Shalaby");
-        driver.findElement(postalCodeInput).sendKeys("1234");
-        driver.findElement(continueButton).click();
+        bot.typing(firstnameInput, "Abdelrahman");
+        bot.typing(lastnameInput, "Shalaby");
+        bot.typing(postalCodeInput, "1234");
+        bot.clicking(continueButton);
 
         //Complete Checkout
-        driver.findElement(finishButton).click();
+        bot.clicking(finishButton);
+
+
+//        //Navigates to login
+//        driver.navigate().to(urlLogin);
+//        LoginPage loginPage = new LoginPage(driver);
+//        loginPage.setLogin("standard_user", "secret_sauce");
+//
+//        //Select Products
+//        driver.findElement(firstProductButton).click();
+//        driver.findElement(secondProductButton).click();
+//        driver.findElement(shoppingCart).click();
+//
+//        //Check Cart
+//        driver.findElement(checkouttButton).click();
+//
+//        //Fill info
+//        driver.findElement(firstnameInput).sendKeys("Abdelrahman");
+//        driver.findElement(lastnameInput).sendKeys("Shalaby");
+//        driver.findElement(postalCodeInput).sendKeys("1234");
+//        driver.findElement(continueButton).click();
+//
+//        //Complete Checkout
+//        driver.findElement(finishButton).click();
     }
 }
