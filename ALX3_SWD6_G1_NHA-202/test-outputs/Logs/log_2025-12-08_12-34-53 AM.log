@@ -1,0 +1,19 @@
+[DEBUG] 08-12-2025 00:34:53 [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\DELL\AppData\Local\JetBrains\IdeaIC2024.3\temp-testng-customsuite.xml"
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] ADDING NODE BaseTest.setup(java.lang.String)[pri:0, instance:null] -133112356
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] ================ SORTING
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] =============== DONE SORTING
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] ====== SORTED NODES
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] ====== END SORTED NODES
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] ADDING NODE BaseTest.tearDown()[pri:0, instance:null] 1650343427
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] ================ SORTING
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] =============== DONE SORTING
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] ====== SORTED NODES
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] ====== END SORTED NODES
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] ADDING NODE ProductsTest.testAddProductsToCart()[pri:0, instance:POMpatternTests.ProductsTest@5b408dc3] -1477703815
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] ================ SORTING
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] =============== DONE SORTING
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] ====== SORTED NODES
+[TRACE] 08-12-2025 00:34:54 [main] [org.testng.internal.Graph] - [Graph] ====== END SORTED NODES
+[INFO] 08-12-2025 00:34:54 [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\DELL\AppData\Local\JetBrains\IdeaIC2024.3\temp-testng-customsuite.xml
+
