@@ -11,6 +11,7 @@ import org.testng.annotations.*;
 public abstract class BaseTest {
     protected WebDriver driver;
 
+
     @Parameters("browser")
     @BeforeMethod
     public void setup(@Optional("chrome") String browser) {

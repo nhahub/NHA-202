@@ -36,21 +36,19 @@ protected void differentSetupMethod(){
                 .validation("https://www.saucedemo.com/");
     }
 
-//    @BeforeMethod
-//    public void setUp() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--start-maximized --guest");
-//        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-//        driver = new ChromeDriver(options);
-//        driver.get("https://www.saucedemo.com/");
-//
-//    }
+  /*  @BeforeMethod
+    public void setUp() {
+        ChromeOptions options = new ChromeOptions();
+       options.addArguments("--start-maximized --guest");
+        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        driver = new ChromeDriver(options);
+       driver.get("https://www.saucedemo.com/");
 
-//    @AfterMethod
-//    public void tearDown() {
-//        driver.quit();
-//    }
+    }
+
+   @AfterMethod
+   public void tearDown() {
+        driver.quit();} */
 
 
 }
-
