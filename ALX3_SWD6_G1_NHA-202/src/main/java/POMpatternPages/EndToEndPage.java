@@ -22,6 +22,13 @@ public class EndToEndPage {
     By continueButton = By.xpath("//input[@name='continue']");
     By finishButton = By.xpath("//button[@name='finish']");
 
+
+   /* public EndToEndPage(WebDriver driver){
+        this.driver=  driver;
+    }*/
+
+
+
     public void endToEndScenario(WebDriver driver) {
 
         //Navigates to login

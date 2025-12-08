@@ -10,7 +10,7 @@ import org.testng.annotations.*;
 
 public abstract class BaseTest {
     protected WebDriver driver;
-
+//public WebDriver driver;
 
     @Parameters("browser")
     @BeforeMethod
