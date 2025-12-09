@@ -30,6 +30,7 @@ public class ActionsBot {
                         WebElement element = d.findElement(locator);
                         new Actions(d).scrollToElement(element);
                         element.click();
+
                         return true;
                     } catch (Exception e) {
                         return false;

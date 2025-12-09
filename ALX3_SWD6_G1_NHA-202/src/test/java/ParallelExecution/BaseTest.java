@@ -1,6 +1,7 @@
 package ParallelExecution;
 
 import Bot.WaitBots;
+import POMpatternPages.LogsManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -15,15 +16,32 @@ public abstract class BaseTest {
     @Parameters("browser")
     @BeforeMethod
     public void setup(@Optional("chrome") String browser) {
-        System.out.println("Launching local browser: " + browser);
+
+        //logs
+        LogsManager.info("Starting Launching Browser ",browser);
+
+      //  System.out.println("Launching local browser: " + browser);
+
 
         if (browser.equalsIgnoreCase("chrome")) {
+
+            //logs
+         //   LogsManager.info("Starting Launching Browser", browser);
+            System.setProperty("selenium.manager.supports-cdp", "false");
+            System.setProperty("selenium.LOGGER.level", "OFF");
             ChromeOptions options = new ChromeOptions();
+            options.setExperimentalOption("excludeSwitches", new String[]{"enable-logging"});
             options.addArguments("--start-maximized");
             options.addArguments("--guest");
             driver = new ChromeDriver(options);
 
+
+
         } else if (browser.equalsIgnoreCase("edge")) {
+            //logs
+            LogsManager.info("Starting Launching Browser, edge");
+
+            System.setProperty("selenium.LOGGER.level", "OFF");
             EdgeOptions options = new EdgeOptions();
             options.addArguments("--start-maximized");
             options.addArguments("--guest");
