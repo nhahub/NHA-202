@@ -9,7 +9,6 @@ public class EndToEnd extends BaseTest{
 
     @Test
     public void endToEndScenarioTest() {
-
         endToEndPage.endToEndScenario(driver);
     }
 }

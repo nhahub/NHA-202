@@ -1,0 +1,158 @@
+[DEBUG] 11-12-2025 09:31:44 [main] [org.testng.TestNG] - suiteXmlPath: "D:\Github\NHA-202\ALX3_SWD6_G1_NHA-202\src\test\java\ParallelExecution\testing-cross-browser.xml"
+[INFO] 11-12-2025 09:31:47 [main] [org.testng.internal.Utils] - [TestNG] Running:
+  D:\Github\NHA-202\ALX3_SWD6_G1_NHA-202\src\test\java\ParallelExecution\testing-cross-browser.xml
+
+[INFO] 11-12-2025 09:31:47 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:31:47 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:31:47 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:32:11 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: swag , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:32:12 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: swag , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 09:32:14 [TestNG-tests-1] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/
+[DEBUG] 11-12-2025 09:32:14 [TestNG-tests-1] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/
+[INFO] 11-12-2025 09:32:14 [TestNG-tests-1] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[DEBUG] 11-12-2025 09:32:14 [TestNG-tests-2] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/
+[DEBUG] 11-12-2025 09:32:14 [TestNG-tests-2] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/
+[INFO] 11-12-2025 09:32:14 [TestNG-tests-2] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:32:16 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:32:16 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:32:16 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:32:33 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:32:36 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 09:32:38 [TestNG-tests-2] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/
+[DEBUG] 11-12-2025 09:32:38 [TestNG-tests-2] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/
+[INFO] 11-12-2025 09:32:38 [TestNG-tests-2] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[DEBUG] 11-12-2025 09:32:42 [TestNG-tests-1] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/
+[DEBUG] 11-12-2025 09:32:42 [TestNG-tests-1] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/
+[INFO] 11-12-2025 09:32:42 [TestNG-tests-1] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:32:45 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:32:45 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:32:45 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:32:58 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username:  , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:33:02 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username:  , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 09:33:04 [TestNG-tests-1] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/
+[DEBUG] 11-12-2025 09:33:04 [TestNG-tests-1] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/
+[INFO] 11-12-2025 09:33:04 [TestNG-tests-1] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[DEBUG] 11-12-2025 09:33:04 [TestNG-tests-2] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/
+[DEBUG] 11-12-2025 09:33:04 [TestNG-tests-2] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/
+[INFO] 11-12-2025 09:33:04 [TestNG-tests-2] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:33:07 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:33:07 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:33:08 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:33:23 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: locked_out_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 09:33:29 [TestNG-tests-2] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/
+[DEBUG] 11-12-2025 09:33:29 [TestNG-tests-2] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/
+[INFO] 11-12-2025 09:33:29 [TestNG-tests-2] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:33:33 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: locked_out_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 09:33:36 [TestNG-tests-1] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/
+[DEBUG] 11-12-2025 09:33:36 [TestNG-tests-1] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/
+[INFO] 11-12-2025 09:33:36 [TestNG-tests-1] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:33:40 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:33:40 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:33:45 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:33:56 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:34:02 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 09:34:08 [TestNG-tests-2] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 09:34:08 [TestNG-tests-2] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 09:34:09 [TestNG-tests-2] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:34:13 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:34:13 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[DEBUG] 11-12-2025 09:34:15 [TestNG-tests-1] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 09:34:15 [TestNG-tests-1] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 09:34:16 [TestNG-tests-1] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:34:24 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:34:30 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: problem_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 09:34:34 [TestNG-tests-2] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 09:34:34 [TestNG-tests-2] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 09:34:34 [TestNG-tests-2] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:34:41 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: problem_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:34:42 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:34:42 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[DEBUG] 11-12-2025 09:34:43 [TestNG-tests-1] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 09:34:43 [TestNG-tests-1] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 09:34:43 [TestNG-tests-1] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:34:52 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:34:56 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: performance_glitch_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:35:07 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: performance_glitch_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 09:35:08 [TestNG-tests-2] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 09:35:08 [TestNG-tests-2] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 09:35:08 [TestNG-tests-2] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:35:12 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:35:12 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[DEBUG] 11-12-2025 09:35:16 [TestNG-tests-1] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 09:35:17 [TestNG-tests-1] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 09:35:17 [TestNG-tests-1] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:35:20 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:35:26 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: error_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 09:35:29 [TestNG-tests-2] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 09:35:29 [TestNG-tests-2] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 09:35:29 [TestNG-tests-2] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:35:31 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:35:31 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:35:35 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: error_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 09:35:49 [TestNG-tests-1] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 09:35:49 [TestNG-tests-1] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 09:35:49 [TestNG-tests-1] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:35:54 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: visual_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:35:56 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[DEBUG] 11-12-2025 09:35:56 [TestNG-tests-2] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 09:35:57 [TestNG-tests-2] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 09:35:57 [TestNG-tests-2] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:36:12 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:36:14 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: visual_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 09:36:16 [TestNG-tests-1] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 09:36:16 [TestNG-tests-1] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 09:36:16 [TestNG-tests-1] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 09:36:33 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:36:33 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:36:46 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:37:35 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:37:42 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:37:42 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:37:42 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:38:12 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:38:19 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:38:19 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:38:41 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:38:47 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:38:47 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:39:50 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:40:45 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:40:58 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:41:14 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:41:28 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:41:34 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:41:53 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:41:59 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:42:25 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:42:26 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:42:26 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:43:02 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:43:06 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:43:39 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:43:52 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:44:03 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:44:05 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:44:05 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:44:19 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:44:32 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:44:32 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:44:33 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:44:51 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:44:52 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:45:08 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 09:45:09 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:45:09 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:45:34 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:45:42 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:46:17 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:46:17 [TestNG-tests-1] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:46:41 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:46:45 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:46:45 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:47:01 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:47:07 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:47:07 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:47:27 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 11-12-2025 09:47:44 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 11-12-2025 09:47:44 [TestNG-tests-2] [ParallelExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 11-12-2025 09:48:24 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**

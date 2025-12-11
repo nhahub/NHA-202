@@ -13,14 +13,11 @@ public class ActionsBot {
     private ActionsBot actionsBot;
     private WaitBots waitBots;
 
-
     // constructors
     public ActionsBot(WebDriver driver) {
         this.driver = driver;
         this.waitBots = new WaitBots(driver);
-
     }
-
 
     // Actions
     public void clicking(By locator) {
@@ -80,7 +77,6 @@ public class ActionsBot {
 
 
     }
-
 
 }
 

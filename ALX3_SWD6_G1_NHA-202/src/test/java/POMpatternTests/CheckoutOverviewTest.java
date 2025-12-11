@@ -10,23 +10,6 @@ import org.testng.annotations.Test;
 public class CheckoutOverviewTest extends BaseTest{
    // WebDriver driver;
     Wait<WebDriver> wait;
-    //ChromeOptions options = new ChromeOptions();
-
-//    @BeforeMethod
-//    public void setup() {
-//        options.addArguments("--start-maximized --guest");
-//        driver = new ChromeDriver(options);
-//    }
-
-//    CheckoutOverviewPage checkoutOverviewPage;
-
-//    @Override
-//    protected void differentSetupMethod(){
-//
-//        CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver, wait);
-//        checkoutOverviewPage.navigatelogin();
-//
-//    }
 
     @Test
     public void testCalculatingPrices() {
@@ -53,8 +36,4 @@ public class CheckoutOverviewTest extends BaseTest{
         checkoutOverviewPage.navigatelogin();
         Assert.assertEquals(checkoutOverviewPage.getSecondItemNameWithBot(), checkoutOverviewPage.secondItemName);
     }
-//    @AfterMethod
-//    public void tearDown() {
-//        driver.quit();
-//    }
 }

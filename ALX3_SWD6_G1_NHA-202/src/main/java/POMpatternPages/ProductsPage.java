@@ -5,16 +5,11 @@ import Bot.ActionsBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.List;
 
 public class ProductsPage {
     private WebDriver driver;
     private ActionsBot actionsBot;
-
-
-
 
     // Locators
     By titleLocator = By.className("title");
@@ -24,22 +19,15 @@ public class ProductsPage {
     By cartItems = By.className("cart_item");
 
     // Constructor
-
     public ProductsPage (WebDriver driver) {
         this.driver = driver;
        this.actionsBot = new ActionsBot(driver);
-
     }
-
-
-
-
     public  ProductsPage addFirstProductToCart() {
         actionsBot.clicking(firstProductButton);
         return this;
 
     }
-
     public  ProductsPage addSecondProductToCart() {
         actionsBot.clicking(secondProductButton);
         return this;
@@ -51,15 +39,12 @@ public class ProductsPage {
 
 
     }
-
     public void goToCart() {
         actionsBot.clicking(cartIcon);
 
     }
-
     public List<WebElement> getCartItems() {
         return driver.findElements(cartItems);
 
     }
-
 }

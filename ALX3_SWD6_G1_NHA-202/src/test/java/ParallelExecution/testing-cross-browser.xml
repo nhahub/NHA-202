@@ -15,7 +15,6 @@
         </classes>
     </test>
 
-
     <!--    Parallel Execution for ProductsTest from both Chrome and Edge-->
     <test name="ProductsTestChromeTest">
         <parameter name="browser" value="chrome"/>
@@ -29,7 +28,6 @@
             <class name="POMpatternTests.ProductsTest"/>
         </classes>
     </test>
-
 
     <!--    Parallel Execution for CartTest from both Chrome and Edge-->
     <test name="CartTestChromeTest">
@@ -45,7 +43,6 @@
         </classes>
     </test>
 
-
     <!--    Parallel Execution for CheckOutStepOneTest from both Chrome and Edge-->
     <test name="CheckOutStepOneTestChromeTest">
         <parameter name="browser" value="chrome"/>
@@ -59,7 +56,6 @@
             <class name="POMpatternTests.CheckOutStepOneTest"/>
         </classes>
     </test>
-
 
     <!--    Parallel Execution for CheckoutOverviewTest from both Chrome and Edge-->
     <test name="CheckoutOverviewTestChromeTest">

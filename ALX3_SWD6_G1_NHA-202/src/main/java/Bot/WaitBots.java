@@ -12,7 +12,6 @@ public class WaitBots {
 
     private WebDriver driver;
 
-
     // constructor
     public WaitBots(WebDriver driver){
         this.driver= driver;
@@ -34,10 +33,4 @@ public class WaitBots {
             exceptions.add(ElementNotInteractableException.class);
             return exceptions;
     }
-
-
-
-
-
-
 }

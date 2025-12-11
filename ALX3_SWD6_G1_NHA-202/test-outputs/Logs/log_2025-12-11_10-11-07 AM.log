@@ -1,0 +1,49 @@
+[DEBUG] 11-12-2025 10:11:07 [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\taymo\AppData\Local\JetBrains\IntelliJIdea2025.2\temp-testng-customsuite.xml"
+[INFO] 11-12-2025 10:11:09 [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\taymo\AppData\Local\JetBrains\IntelliJIdea2025.2\temp-testng-customsuite.xml
+
+[INFO] 11-12-2025 10:11:10 [main] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 10:11:31 [main] [POMpatternPages.LoginPage] - Starting Login Test with Username: swag , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 10:11:32 [main] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/
+[DEBUG] 11-12-2025 10:11:32 [main] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/
+[INFO] 11-12-2025 10:11:32 [main] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 10:11:34 [main] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 10:11:44 [main] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 10:11:45 [main] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/
+[DEBUG] 11-12-2025 10:11:45 [main] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/
+[INFO] 11-12-2025 10:11:45 [main] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 10:11:47 [main] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 10:11:55 [main] [POMpatternPages.LoginPage] - Starting Login Test with Username:  , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 10:11:58 [main] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/
+[DEBUG] 11-12-2025 10:11:58 [main] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/
+[INFO] 11-12-2025 10:11:58 [main] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 10:12:00 [main] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 10:12:09 [main] [POMpatternPages.LoginPage] - Starting Login Test with Username: locked_out_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 10:12:11 [main] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/
+[DEBUG] 11-12-2025 10:12:11 [main] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/
+[INFO] 11-12-2025 10:12:11 [main] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 10:12:13 [main] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 10:12:19 [main] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 10:12:22 [main] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 10:12:22 [main] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 10:12:22 [main] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 10:12:24 [main] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 10:12:31 [main] [POMpatternPages.LoginPage] - Starting Login Test with Username: problem_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 10:12:33 [main] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 10:12:33 [main] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 10:12:33 [main] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 10:12:35 [main] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 10:12:42 [main] [POMpatternPages.LoginPage] - Starting Login Test with Username: performance_glitch_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 10:12:49 [main] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 10:12:49 [main] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 10:12:49 [main] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 10:12:51 [main] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 10:13:00 [main] [POMpatternPages.LoginPage] - Starting Login Test with Username: error_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 10:13:01 [main] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 10:13:01 [main] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 10:13:01 [main] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url
+[INFO] 11-12-2025 10:13:03 [main] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 11-12-2025 10:13:13 [main] [POMpatternPages.LoginPage] - Starting Login Test with Username: visual_user , Password: **[SENSITIVE DATA HIDDEN]**
+[DEBUG] 11-12-2025 10:13:14 [main] [POMpatternPages.LoginPage] - Expected Url after login:https://www.saucedemo.com/inventory.html
+[DEBUG] 11-12-2025 10:13:14 [main] [POMpatternPages.LoginPage] - String CurrentUrl:https://www.saucedemo.com/inventory.html
+[INFO] 11-12-2025 10:13:14 [main] [POMpatternPages.LoginPage] - Assertion Passed : , User reached the Corrected Url

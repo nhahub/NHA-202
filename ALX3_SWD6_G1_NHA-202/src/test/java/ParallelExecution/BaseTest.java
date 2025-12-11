@@ -1,6 +1,5 @@
 package ParallelExecution;
 
-import Bot.WaitBots;
 import POMpatternPages.LogsManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,22 +10,15 @@ import org.testng.annotations.*;
 
 public abstract class BaseTest {
     protected WebDriver driver;
-//public WebDriver driver;
 
+    //public WebDriver driver;
     @Parameters("browser")
     @BeforeMethod
     public void setup(@Optional("chrome") String browser) {
-
         //logs
-        LogsManager.info("Starting Launching Browser ",browser);
-
-      //  System.out.println("Launching local browser: " + browser);
-
-
+        LogsManager.info("Starting Launching Browser ", browser);
         if (browser.equalsIgnoreCase("chrome")) {
-
             //logs
-         //   LogsManager.info("Starting Launching Browser", browser);
             System.setProperty("selenium.manager.supports-cdp", "false");
             System.setProperty("selenium.LOGGER.level", "OFF");
             ChromeOptions options = new ChromeOptions();
@@ -34,13 +26,9 @@ public abstract class BaseTest {
             options.addArguments("--start-maximized");
             options.addArguments("--guest");
             driver = new ChromeDriver(options);
-
-
-
         } else if (browser.equalsIgnoreCase("edge")) {
             //logs
             LogsManager.info("Starting Launching Browser, edge");
-
             System.setProperty("selenium.LOGGER.level", "OFF");
             EdgeOptions options = new EdgeOptions();
             options.addArguments("--start-maximized");
@@ -49,14 +37,10 @@ public abstract class BaseTest {
         } else {
             throw new IllegalArgumentException("Unsupported browser: " + browser);
         }
-
         differentSetupMethod();
     }
-
     protected void differentSetupMethod() {
-
     }
-
     @AfterMethod
     public void tearDown() {
         driver.quit();

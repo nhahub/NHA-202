@@ -3,6 +3,7 @@ package POMpatternTests;
 import org.testng.annotations.DataProvider;
 
 public class TestData {
+
     @DataProvider(name="loginValidData")
     public Object [][]loginValidData(){
         return new Object[][]
@@ -14,6 +15,7 @@ public class TestData {
                         {"visual_user","secret_sauce"},
                 };
     }
+
     @DataProvider(name ="loginInvalidData")
     public Object [][] inValidLogIn(){
         return new Object[][]{
@@ -23,6 +25,7 @@ public class TestData {
                 {"locked_out_user","secret_sauce"},
         };
     }
+
     @DataProvider(name="CheckOutStepOneMissingField")
     public Object[][]CheckOutStepOneMissingField(){
         return new Object[][]{
@@ -31,6 +34,7 @@ public class TestData {
                 {"Abdelrahman","Shalaby","","Error: Postal Code is required"}, //Suggested edit
         };
     }
+
     @DataProvider(name="numbersAndSpecialCharacter")
     public Object [][] usingNumbersAndSpecialCharacter(){
         return new Object [][]{
@@ -38,6 +42,4 @@ public class TestData {
         };
 
     }
-
-
 }
