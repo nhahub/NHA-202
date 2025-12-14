@@ -4,17 +4,8 @@ import POMpatternPages.CartPage;
 import POMpatternPages.CheckOutStepOne;
 import POMpatternPages.LoginPage;
 import POMpatternPages.ProductsPage;
-import ParallelExecution.BaseTest;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import CrossBrowserExecution.BaseTest;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 

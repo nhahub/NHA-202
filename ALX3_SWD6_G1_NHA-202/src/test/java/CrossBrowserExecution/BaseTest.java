@@ -1,4 +1,4 @@
-package ParallelExecution;
+package CrossBrowserExecution;
 
 import POMpatternPages.LogsManager;
 import org.openqa.selenium.WebDriver;

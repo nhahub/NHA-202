@@ -1,7 +1,7 @@
 package POMpatternTests;
 
 import POMpatternPages.*;
-import ParallelExecution.BaseTest;
+import CrossBrowserExecution.BaseTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;

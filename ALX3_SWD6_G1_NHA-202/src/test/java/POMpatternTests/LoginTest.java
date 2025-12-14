@@ -1,7 +1,7 @@
 package POMpatternTests;
 
 import POMpatternPages.LoginPage;
-import ParallelExecution.BaseTest;
+import CrossBrowserExecution.BaseTest;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {

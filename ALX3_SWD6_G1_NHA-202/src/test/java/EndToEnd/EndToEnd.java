@@ -1,7 +1,7 @@
 package EndToEnd;
 
 import POMpatternPages.*;
-import ParallelExecution.BaseTest;
+import CrossBrowserExecution.BaseTest;
 import org.testng.annotations.Test;
 
 public class EndToEnd extends BaseTest{

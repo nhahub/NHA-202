@@ -1,7 +1,7 @@
 package POMpatternTests;
 
 import POMpatternPages.CartPage;
-import ParallelExecution.BaseTest;
+import CrossBrowserExecution.BaseTest;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;

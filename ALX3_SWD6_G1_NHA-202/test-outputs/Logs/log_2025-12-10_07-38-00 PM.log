@@ -2,4 +2,4 @@
 [INFO] 10-12-2025 19:38:10 [main] [org.testng.internal.Utils] - [TestNG] Running:
   C:\Users\taymo\AppData\Local\JetBrains\IntelliJIdea2025.2\temp-testng-customsuite.xml
 
-[INFO] 10-12-2025 19:38:12 [main] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 10-12-2025 19:38:12 [main] [CrossBrowserExecution.BaseTest] - Starting Launching Browser chrome

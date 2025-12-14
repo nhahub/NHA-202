@@ -2,7 +2,7 @@ package POMpatternTests;
 
 import POMpatternPages.LoginPage;
 import POMpatternPages.ProductsPage;
-import ParallelExecution.BaseTest;
+import CrossBrowserExecution.BaseTest;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
