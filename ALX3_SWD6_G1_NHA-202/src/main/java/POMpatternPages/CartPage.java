@@ -1,6 +1,5 @@
 package POMpatternPages;
 
-import Bot.ActionsBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +10,6 @@ import java.time.Duration;
 import java.util.List;
 
 public class CartPage {
-
     WebDriver driver;
     WebDriverWait wait;
     // Locators
@@ -32,45 +30,35 @@ public class CartPage {
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(cartItem));
         return driver.findElements(cartItem).size();
     }
-
     public String getFirstItemName() {
         List<WebElement> items = driver.findElements(cartItemName);
         return !items.isEmpty() ? items.getFirst().getText() : null;
     }
-
     public String getSecondItemName() {
         List<WebElement> items = driver.findElements(cartItemName);
         return items.size() > 1 ? items.get(1).getText() : null;
     }
-
     public String getFirstItemPrice() {
         List<WebElement> prices = driver.findElements(cartItemPrice);
         return !prices.isEmpty() ? prices.getFirst().getText() : null;
     }
-
     public String getSecondItemPrice() {
         List<WebElement> prices = driver.findElements(cartItemPrice);
         return prices.size() > 1 ? prices.get(1).getText() : null;
     }
-
     public int getFirstItemQuantity() {
         List<WebElement> quantities = driver.findElements(quantityField);
         return !quantities.isEmpty() ? Integer.parseInt(quantities.getFirst().getText()) : 0;
     }
-
     public int getSecondItemQuantity() {
         List<WebElement> quantities = driver.findElements(quantityField);
         return quantities.size() > 1 ? Integer.parseInt(quantities.get(1).getText()) : 0;
     }
-
-
     public boolean isCheckoutButtonDisplayed() {
         return driver.findElement(checkoutBtn).isDisplayed();
     }
-
     public void clickCheckButton(){wait.until(ExpectedConditions.elementToBeClickable(checkoutBtn)).click();
     }
-
     public void navigate(WebDriver driver) {
         driver.get("https://www.saucedemo.com/");
 // Login

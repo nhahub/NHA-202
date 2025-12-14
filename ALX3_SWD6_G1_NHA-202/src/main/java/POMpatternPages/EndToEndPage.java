@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class EndToEndPage {
-    WebDriver driver;
     String urlLogin = "https://www.saucedemo.com/";
     ActionsBot bot;
 
@@ -22,62 +21,26 @@ public class EndToEndPage {
     By continueButton = By.xpath("//input[@name='continue']");
     By finishButton = By.xpath("//button[@name='finish']");
 
-
-   /* public EndToEndPage(WebDriver driver){
-        this.driver=  driver;
-    }*/
-
-
-
     public void endToEndScenario(WebDriver driver) {
-
         //Navigates to login
         driver.navigate().to(urlLogin);
         bot = new ActionsBot(driver);
-
         //Fill login fields
         bot.typing(username, "standard_user");
         bot.typing(password, "secret_sauce");
         bot.clicking(loginButton);
-
         //Select Products
         bot.clicking(firstProductButton);
         bot.clicking(secondProductButton);
         bot.clicking(shoppingCart);
-
         //Check Cart
         bot.clicking(checkouttButton);
-
         //Fill info
         bot.typing(firstnameInput, "Abdelrahman");
         bot.typing(lastnameInput, "Shalaby");
         bot.typing(postalCodeInput, "1234");
         bot.clicking(continueButton);
-
         //Complete Checkout
         bot.clicking(finishButton);
-
-
-//        //Navigates to login
-//        driver.navigate().to(urlLogin);
-//        LoginPage loginPage = new LoginPage(driver);
-//        loginPage.setLogin("standard_user", "secret_sauce");
-//
-//        //Select Products
-//        driver.findElement(firstProductButton).click();
-//        driver.findElement(secondProductButton).click();
-//        driver.findElement(shoppingCart).click();
-//
-//        //Check Cart
-//        driver.findElement(checkouttButton).click();
-//
-//        //Fill info
-//        driver.findElement(firstnameInput).sendKeys("Abdelrahman");
-//        driver.findElement(lastnameInput).sendKeys("Shalaby");
-//        driver.findElement(postalCodeInput).sendKeys("1234");
-//        driver.findElement(continueButton).click();
-//
-//        //Complete Checkout
-//        driver.findElement(finishButton).click();
     }
 }

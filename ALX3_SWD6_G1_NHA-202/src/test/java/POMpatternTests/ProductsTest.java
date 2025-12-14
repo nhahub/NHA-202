@@ -2,16 +2,13 @@ package POMpatternTests;
 
 import POMpatternPages.LoginPage;
 import POMpatternPages.ProductsPage;
-import ParallelExecution.BaseTest;
+import CrossBrowserExecution.BaseTest;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 
 public class ProductsTest extends BaseTest {
 
@@ -19,23 +16,8 @@ public class ProductsTest extends BaseTest {
     private LoginPage loginPage;
     private ProductsPage productpage;
 
-
-//    @BeforeMethod
-//    public void setUp() {
-//        // Initialize WebDriver and  productpage
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--start-maximized --guest");
-//        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-//        driver = new ChromeDriver(options);
-//        loginPage = new LoginPage(driver);
-//        productpage = new ProductsPage(driver);
-//        driver.navigate().to("https://www.saucedemo.com/");
-//
-//    }
-
     @Override
     protected void differentSetupMethod() {
-
         // Initialize WebDriver and  productpage
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized --guest");
@@ -44,13 +26,10 @@ public class ProductsTest extends BaseTest {
         loginPage = new LoginPage(driver);
         productpage = new ProductsPage(driver);
         driver.navigate().to("https://www.saucedemo.com/");
-
     }
 
     @Test
     public void testAddProductsToCart() {
-
-
         //step 1:login page
         loginPage.setLogin("standard_user", "secret_sauce");
 
@@ -66,18 +45,7 @@ public class ProductsTest extends BaseTest {
         productpage.goToCart();
         Assert.assertEquals(productpage.getCartItems().size(), 2, "Cart contains 2 items");
 
-
         System.out.println("Test passed: 2 items added to the cart.");
 
     }
-
-
-//    @AfterMethod
-//    public void tearDown() {
-//        // Close the browser
-//       // if (driver != null) {
-//            driver.quit();
-//        //}
-//
-//    }
 }
