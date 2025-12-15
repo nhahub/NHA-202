@@ -1,0 +1,5 @@
+[DEBUG] 15-12-2025 01:13:53 [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\DELL\AppData\Local\JetBrains\IdeaIC2024.3\temp-testng-customsuite.xml"
+[INFO] 15-12-2025 01:13:56 [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\DELL\AppData\Local\JetBrains\IdeaIC2024.3\temp-testng-customsuite.xml
+
+[INFO] 15-12-2025 01:13:56 [main] [ParallelExecution.BaseTest] - Starting Launching Browser chrome
