@@ -1,0 +1,5 @@
+[DEBUG] 15-12-2025 03:08:55 [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\taymo\AppData\Local\JetBrains\IntelliJIdea2025.2\temp-testng-customsuite.xml"
+[INFO] 15-12-2025 03:08:57 [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\taymo\AppData\Local\JetBrains\IntelliJIdea2025.2\temp-testng-customsuite.xml
+
+[INFO] 15-12-2025 03:08:57 [main] [CrossBrowserExecution.BaseTest] - Starting Launching Browser chrome

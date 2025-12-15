@@ -6,10 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class LoginPage {
+
     // variables
     private final WebDriver driver;
     private ActionsBot actionsBot;
     String CurrentUrl;
+
     //locators
     private final By username = By.id("user-name");
     private final By password = By.id("password");
@@ -22,7 +24,10 @@ public class LoginPage {
     }
 
     // Actions
+    //This method is used for login process by passing 'username' and 'password' as parameters
+    //Also, it provides a logging message in the console contains username and password as a group of stars
     public LoginPage setLogin(String userName, String pass) {
+
         //logs
         LogsManager.info("Starting Login Test with Username: ", userName + " ", ", Password:" + " " + "**[SENSITIVE DATA HIDDEN]**");
 
@@ -30,7 +35,6 @@ public class LoginPage {
         actionsBot.typing(password, pass);
         actionsBot.clicking(loginButton);
         return this;
-
     }
 
     // validation

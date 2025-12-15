@@ -19,7 +19,10 @@ public class ActionsBot {
         this.waitBots = new WaitBots(driver);
     }
 
-    // Actions
+//    ************************************Actions*********************************************
+
+    //    This method is used for perform the function of 'clicking' from any class in the project
+    //    uses object from ActionsBot, and also the method itself handles wait from the WaitBots
     public void clicking(By locator) {
 
         waitBots.fluentWait().until(d -> {
@@ -36,7 +39,8 @@ public class ActionsBot {
         );
     }
 
-
+    //    This method is used for perform the function of 'typing' from any class in the project
+    //    uses object from ActionsBot, and also the method itself handles wait from the WaitBots
     public void typing(By locator, String text) {
 
         waitBots.fluentWait().until(d -> {
@@ -55,25 +59,26 @@ public class ActionsBot {
 
     }
 
-
+    //    This method is used for perform the function of 'getting text' from any class in the project
+    //    uses object from ActionsBot, and also the method itself handles wait from the WaitBots
     public String getText(By locator) {
 
-       return waitBots.fluentWait().until(d ->
-       {
-            try {
-                WebElement element = d.findElement(locator);
-                new Actions(d).scrollToElement(element);
-                String textMsg = element.getText();
-                if (!textMsg.isEmpty()) {
-                    return textMsg;
-                } else {
-                    return null;
+        return waitBots.fluentWait().until(d ->
+                {
+                    try {
+                        WebElement element = d.findElement(locator);
+                        new Actions(d).scrollToElement(element);
+                        String textMsg = element.getText();
+                        if (!textMsg.isEmpty()) {
+                            return textMsg;
+                        } else {
+                            return null;
+                        }
+                    } catch (Exception e) {
+                        return null;
+                    }
                 }
-            } catch (Exception e) {
-                return null;
-            }
-        }
-     );
+        );
 
 
     }

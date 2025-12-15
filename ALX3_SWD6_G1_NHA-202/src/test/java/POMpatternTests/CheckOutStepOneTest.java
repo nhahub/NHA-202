@@ -28,11 +28,15 @@ public class CheckOutStepOneTest extends BaseTest {
         productsPage.addFirstProductToCart().addSecondProductToCart().goToCart();
         cartPage.clickCheckButton();
     }
+
+
     @Test
     public void validLogInCredentialsInCheckOutStepOneTC5() {
         String pageTitle = new CheckOutStepOne(driver).fillFirstName("Abdelrahman").fillLastName("Shalaby").fillZipCode("03").clickContinue().checkOutGetUrl();
         Assert.assertEquals(pageTitle,"https://www.saucedemo.com/checkout-step-two.html");
     }
+
+
     @Test(dataProvider="CheckOutStepOneMissingField" ,dataProviderClass = TestData.class)
     public void fillOneMissingField(String firstName,String lastName,String postalCode, String expectedErrorMessage){
         checkOutStepOne.fillFirstName(firstName).fillLastName(lastName).fillZipCode(postalCode).clickContinue();
@@ -40,6 +44,8 @@ public class CheckOutStepOneTest extends BaseTest {
         Assert.assertEquals(actualError,expectedErrorMessage);
         System.out.println(" all is good ");
     }
+
+
     @Test(dataProvider ="numbersAndSpecialCharacter", dataProviderClass = TestData.class)
     public void UsingSpecialCharacterInFirstAndLastNameAndPostalCode(String firstName,String lastName,String postalCode){
         checkOutStepOne.fillFirstName(firstName).fillLastName(lastName).fillZipCode(postalCode).clickContinue();

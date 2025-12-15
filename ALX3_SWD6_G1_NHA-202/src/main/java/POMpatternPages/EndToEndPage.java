@@ -3,11 +3,13 @@ package POMpatternPages;
 import Bot.ActionsBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class EndToEndPage {
     String urlLogin = "https://www.saucedemo.com/";
     ActionsBot bot;
 
+    //Locators
     By username = By.id("user-name");
     By password = By.id("password");
     By loginButton = By.xpath("//input[@type='submit']");
@@ -21,25 +23,33 @@ public class EndToEndPage {
     By continueButton = By.xpath("//input[@name='continue']");
     By finishButton = By.xpath("//button[@name='finish']");
 
+
+    //This method is used to perform the End to End scenario
     public void endToEndScenario(WebDriver driver) {
+
         //Navigates to login
         driver.navigate().to(urlLogin);
         bot = new ActionsBot(driver);
+
         //Fill login fields
         bot.typing(username, "standard_user");
         bot.typing(password, "secret_sauce");
         bot.clicking(loginButton);
+
         //Select Products
         bot.clicking(firstProductButton);
         bot.clicking(secondProductButton);
         bot.clicking(shoppingCart);
+
         //Check Cart
         bot.clicking(checkouttButton);
+
         //Fill info
         bot.typing(firstnameInput, "Abdelrahman");
         bot.typing(lastnameInput, "Shalaby");
         bot.typing(postalCodeInput, "1234");
         bot.clicking(continueButton);
+
         //Complete Checkout
         bot.clicking(finishButton);
     }

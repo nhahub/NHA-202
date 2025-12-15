@@ -46,6 +46,6 @@ public class ProductsTest extends BaseTest {
         Assert.assertEquals(productpage.getCartItems().size(), 2, "Cart contains 2 items");
 
         System.out.println("Test passed: 2 items added to the cart.");
-
+        driver.quit();
     }
 }

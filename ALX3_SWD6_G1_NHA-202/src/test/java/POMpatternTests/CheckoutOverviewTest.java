@@ -11,6 +11,8 @@ public class CheckoutOverviewTest extends BaseTest{
    // WebDriver driver;
     Wait<WebDriver> wait;
 
+    //This test method is test 2 assertions that total price on the wedsite equal to calculated total price
+    //Also, assert that the final price after adding the tax is equal the calculated one
     @Test
     public void testCalculatingPrices() {
         CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver, wait);
@@ -24,12 +26,16 @@ public class CheckoutOverviewTest extends BaseTest{
                 checkoutOverviewPage.CalculateFinalPrice(),
                 checkoutOverviewPage.FindFinalPrice());
     }
+
+    //This test method is used to assert that the name of the first item is the same as expected
     @Test
     public void testEnsuringFirstItemNameWithBot() {
         CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver, wait);
         checkoutOverviewPage.navigatelogin();
         Assert.assertEquals(checkoutOverviewPage.getFirstItemNameWithBot(), checkoutOverviewPage.firstItemName);
     }
+
+    //This test method is used to assert that the name of the first item is the same as expected
     @Test
     public void testEnsuringSecondItemNameWithBot() {
         CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage(driver, wait);

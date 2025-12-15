@@ -1,0 +1,6 @@
+[DEBUG] 15-12-2025 09:13:17 [main] [org.testng.TestNG] - suiteXmlPath: "C:\Users\taymo\AppData\Local\JetBrains\IntelliJIdea2025.2\temp-testng-customsuite.xml"
+[INFO] 15-12-2025 09:13:22 [main] [org.testng.internal.Utils] - [TestNG] Running:
+  C:\Users\taymo\AppData\Local\JetBrains\IntelliJIdea2025.2\temp-testng-customsuite.xml
+
+[INFO] 15-12-2025 09:13:24 [main] [CrossBrowserExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 15-12-2025 09:14:28 [main] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**

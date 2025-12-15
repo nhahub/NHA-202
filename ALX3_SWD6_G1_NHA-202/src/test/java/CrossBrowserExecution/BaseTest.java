@@ -13,6 +13,7 @@ public abstract class BaseTest {
 
     //public WebDriver driver;
     @Parameters("browser")
+
     @BeforeMethod
     public void setup(@Optional("chrome") String browser) {
         //logs
@@ -39,8 +40,10 @@ public abstract class BaseTest {
         }
         differentSetupMethod();
     }
+
     protected void differentSetupMethod() {
     }
+
     @AfterMethod
     public void tearDown() {
         driver.quit();

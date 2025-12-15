@@ -1,0 +1,29 @@
+[DEBUG] 15-12-2025 01:43:37 [main] [org.testng.TestNG] - suiteXmlPath: "D:\Github\NHA-202\ALX3_SWD6_G1_NHA-202\src\test\java\CrossBrowserExecution\testing-cross-browser.xml"
+[INFO] 15-12-2025 01:43:42 [main] [org.testng.internal.Utils] - [TestNG] Running:
+  D:\Github\NHA-202\ALX3_SWD6_G1_NHA-202\src\test\java\CrossBrowserExecution\testing-cross-browser.xml
+
+[INFO] 15-12-2025 01:43:43 [TestNG-tests-1] [CrossBrowserExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 15-12-2025 01:43:43 [TestNG-tests-2] [CrossBrowserExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 15-12-2025 01:43:43 [TestNG-tests-2] [CrossBrowserExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 15-12-2025 01:50:15 [TestNG-tests-1] [CrossBrowserExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 15-12-2025 01:50:15 [TestNG-tests-2] [CrossBrowserExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 15-12-2025 01:50:15 [TestNG-tests-1] [CrossBrowserExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 15-12-2025 01:53:13 [TestNG-tests-1] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 15-12-2025 01:53:13 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 15-12-2025 01:54:41 [TestNG-tests-1] [CrossBrowserExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 15-12-2025 01:54:41 [TestNG-tests-2] [CrossBrowserExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 15-12-2025 01:54:42 [TestNG-tests-2] [CrossBrowserExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 15-12-2025 01:57:30 [TestNG-tests-1] [CrossBrowserExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 15-12-2025 01:57:30 [TestNG-tests-2] [CrossBrowserExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 15-12-2025 01:57:32 [TestNG-tests-2] [CrossBrowserExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 15-12-2025 02:02:27 [TestNG-tests-1] [CrossBrowserExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 15-12-2025 02:02:27 [TestNG-tests-2] [CrossBrowserExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 15-12-2025 02:02:37 [TestNG-tests-2] [CrossBrowserExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 15-12-2025 02:06:09 [TestNG-tests-2] [CrossBrowserExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 15-12-2025 02:06:59 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 15-12-2025 02:08:27 [TestNG-tests-2] [CrossBrowserExecution.BaseTest] - Starting Launching Browser chrome
+[INFO] 15-12-2025 02:09:01 [TestNG-tests-1] [CrossBrowserExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 15-12-2025 02:09:01 [TestNG-tests-1] [CrossBrowserExecution.BaseTest] - Starting Launching Browser, edge
+[INFO] 15-12-2025 02:11:24 [TestNG-tests-2] [POMpatternPages.LoginPage] - Starting Login Test with Username: standard_user , Password: **[SENSITIVE DATA HIDDEN]**
+[INFO] 15-12-2025 02:18:11 [TestNG-tests-1] [CrossBrowserExecution.BaseTest] - Starting Launching Browser edge
+[INFO] 15-12-2025 02:18:11 [TestNG-tests-1] [CrossBrowserExecution.BaseTest] - Starting Launching Browser, edge

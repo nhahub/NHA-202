@@ -23,28 +23,34 @@ public class ProductsPage {
         this.driver = driver;
        this.actionsBot = new ActionsBot(driver);
     }
+
+    //This method is used to add the first item to cart
     public  ProductsPage addFirstProductToCart() {
         actionsBot.clicking(firstProductButton);
         return this;
 
     }
+
+    //This method is used to add the second item to cart
     public  ProductsPage addSecondProductToCart() {
         actionsBot.clicking(secondProductButton);
         return this;
     }
+
+    //This method is used to get the 'Title' text
     public String getPageTitle() {
         System.out.println("Products page are displayed");
         return driver.findElement(titleLocator).getText();
 
-
-
     }
+
+    //This method is used to navigate to 'Cart' page from 'Products' page
     public void goToCart() {
         actionsBot.clicking(cartIcon);
-
     }
+
+    //This method is used to retrieve the items in the cart
     public List<WebElement> getCartItems() {
         return driver.findElements(cartItems);
-
     }
 }
