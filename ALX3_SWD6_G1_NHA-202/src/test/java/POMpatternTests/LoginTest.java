@@ -20,7 +20,7 @@ protected void differentSetupMethod(){
                .validation("https://www.saucedemo.com/inventory.html");
     }
 
-    //invalid name and valid password
+    //Login with invalid name or password
     @Test(dataProvider = "loginInvalidData",dataProviderClass = TestData.class)
     public void loginUsingInvalidCredentials(String userName, String password){
          new LoginPage(driver)
