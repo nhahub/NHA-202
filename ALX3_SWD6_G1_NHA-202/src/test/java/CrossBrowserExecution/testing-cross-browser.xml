@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="ParallelSuite" parallel="tests" thread-count="2">
+<suite name="CrossBrowserSuite" parallel="tests" thread-count="2">
 
-<!--    Parallel Execution for LoginTest from both Chrome and Edge-->
+<!--    Cross Browser Execution for LoginTest from both Chrome and Edge-->
     <test name="LoginTestChromeTest">
         <parameter name="browser" value="chrome"/>
         <classes>
@@ -16,7 +16,7 @@
     </test>
 
 
-    <!--    Parallel Execution for ProductsTest from both Chrome and Edge-->
+    <!--    Cross Browser Execution for ProductsTest from both Chrome and Edge-->
     <test name="ProductsTestChromeTest">
         <parameter name="browser" value="chrome"/>
         <classes>
@@ -31,7 +31,7 @@
     </test>
 
 
-    <!--    Parallel Execution for CartTest from both Chrome and Edge-->
+    <!--    Cross Browser Execution for CartTest from both Chrome and Edge-->
     <test name="CartTestChromeTest">
         <parameter name="browser" value="chrome"/>
         <classes>
@@ -46,7 +46,7 @@
     </test>
 
 
-    <!--    Parallel Execution for CheckOutStepOneTest from both Chrome and Edge-->
+    <!--    Cross Browser Execution for CheckOutStepOneTest from both Chrome and Edge-->
     <test name="CheckOutStepOneTestChromeTest">
         <parameter name="browser" value="chrome"/>
         <classes>
@@ -61,7 +61,7 @@
     </test>
 
 
-    <!--    Parallel Execution for CheckoutOverviewTest from both Chrome and Edge-->
+    <!--    Cross Browser Execution for CheckoutOverviewTest from both Chrome and Edge-->
     <test name="CheckoutOverviewTestChromeTest">
         <parameter name="browser" value="chrome"/>
         <classes>

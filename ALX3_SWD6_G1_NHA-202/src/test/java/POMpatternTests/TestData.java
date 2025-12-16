@@ -2,8 +2,10 @@ package POMpatternTests;
 
 import org.testng.annotations.DataProvider;
 
+//This class is used as data provider that invoked from test methods add it
 public class TestData {
 
+    //This data is used to provide login credentials
     @DataProvider(name="loginValidData")
     public Object [][]loginValidData(){
         return new Object[][]
@@ -16,6 +18,7 @@ public class TestData {
                 };
     }
 
+    //This data is used to provide invalid login data
     @DataProvider(name ="loginInvalidData")
     public Object [][] inValidLogIn(){
         return new Object[][]{
@@ -26,6 +29,11 @@ public class TestData {
         };
     }
 
+    /*
+    This data is used to provide 'Checkout Step One' page with missing data
+    Missing 'First Name', 'Last Name', and 'Zip Code' respectively
+    Also, it provides data about the error message shown specifically for the missing data
+    */
     @DataProvider(name="CheckOutStepOneMissingField")
     public Object[][]CheckOutStepOneMissingField(){
         return new Object[][]{
@@ -35,6 +43,7 @@ public class TestData {
         };
     }
 
+    //This data is used to provide data contains numbers and special characters to all fields
     @DataProvider(name="numbersAndSpecialCharacter")
     public Object [][] usingNumbersAndSpecialCharacter(){
         return new Object [][]{

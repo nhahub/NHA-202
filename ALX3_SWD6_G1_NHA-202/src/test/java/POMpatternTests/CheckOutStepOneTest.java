@@ -17,6 +17,7 @@ public class CheckOutStepOneTest extends BaseTest {
     CheckOutStepOne checkOutStepOne;
     SoftAssert softAssert=new SoftAssert();
 
+    //This method is overridden from the BaseTest to add additional setup
     @Override
     protected void differentSetupMethod(){
         loginPage = new LoginPage(driver);
@@ -29,14 +30,22 @@ public class CheckOutStepOneTest extends BaseTest {
         cartPage.clickCheckButton();
     }
 
-
+    /*
+    This method is used to check that the url is changed to the 'Checkout Overview' page after completed
+    This method is use 'Fluent' pattern to make method chaining
+    */
     @Test
     public void validLogInCredentialsInCheckOutStepOneTC5() {
         String pageTitle = new CheckOutStepOne(driver).fillFirstName("Abdelrahman").fillLastName("Shalaby").fillZipCode("03").clickContinue().checkOutGetUrl();
         Assert.assertEquals(pageTitle,"https://www.saucedemo.com/checkout-step-two.html");
     }
 
-
+    /*
+    This method is used to check the error message appears when entering invalid data in the fields
+    This method is use data provider to pull invalid credentials even if it is missing or invalid,
+    then compare the error message displayed on the screen with the expected one in the data provider
+    This method is use 'Fluent' pattern to make method chaining
+    */
     @Test(dataProvider="CheckOutStepOneMissingField" ,dataProviderClass = TestData.class)
     public void fillOneMissingField(String firstName,String lastName,String postalCode, String expectedErrorMessage){
         checkOutStepOne.fillFirstName(firstName).fillLastName(lastName).fillZipCode(postalCode).clickContinue();
@@ -46,6 +55,13 @@ public class CheckOutStepOneTest extends BaseTest {
     }
 
 
+    /*
+    This method is used to check when 'First Name' field is filled with special characters, is an alert
+    is shown?
+    It assumes that alert is shawn and the url stays the same and not proceeds to the next page, but as
+    the site contains that bug, and it actually accepts special characters in all fields the alert is not
+    shawn, so the method is intended to be failed to show that there is a bug
+    */
     @Test(dataProvider ="numbersAndSpecialCharacter", dataProviderClass = TestData.class)
     public void UsingSpecialCharacterInFirstAndLastNameAndPostalCode(String firstName,String lastName,String postalCode){
         checkOutStepOne.fillFirstName(firstName).fillLastName(lastName).fillZipCode(postalCode).clickContinue();

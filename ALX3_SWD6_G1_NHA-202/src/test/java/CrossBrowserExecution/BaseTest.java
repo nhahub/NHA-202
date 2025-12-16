@@ -14,6 +14,7 @@ public abstract class BaseTest {
     //public WebDriver driver;
     @Parameters("browser")
 
+    //This method is invoked before any method in test class extends it start
     @BeforeMethod
     public void setup(@Optional("chrome") String browser) {
         //logs
@@ -38,12 +39,16 @@ public abstract class BaseTest {
         } else {
             throw new IllegalArgumentException("Unsupported browser: " + browser);
         }
+
+        //this method is invoked here to do any additional setup if needed
         differentSetupMethod();
     }
 
+    //This method is used to be overridden if the test class needs additional setup actions before it starts
     protected void differentSetupMethod() {
     }
 
+    //This method is used to close the driver after each method end
     @AfterMethod
     public void tearDown() {
         driver.quit();
