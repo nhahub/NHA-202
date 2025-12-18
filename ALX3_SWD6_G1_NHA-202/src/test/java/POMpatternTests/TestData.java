@@ -5,7 +5,9 @@ import org.testng.annotations.DataProvider;
 //This class is used as data provider that invoked from test methods add it
 public class TestData {
 
-    //This data is used to provide login credentials
+    //This data is used to provide login credentials using Data provider, data provider create 2 D array
+    // containing all data at once,testing framework deal with the first array and test the assertion,
+    // then moves to next array
     @DataProvider(name="loginValidData")
     public Object [][]loginValidData(){
         return new Object[][]
@@ -30,9 +32,9 @@ public class TestData {
     }
 
     /*
-    This data is used to provide 'Checkout Step One' page with missing data
+    This data is used to provide 'Checkout Step One' page with one missing field each time,
     Missing 'First Name', 'Last Name', and 'Zip Code' respectively
-    Also, it provides data about the error message shown specifically for the missing data
+    Also, it provides expected error message for each missing field
     */
     @DataProvider(name="CheckOutStepOneMissingField")
     public Object[][]CheckOutStepOneMissingField(){

@@ -31,7 +31,8 @@ public class CheckOutStepOneTest extends BaseTest {
     }
 
     /*
-    This method is used to check that the url is changed to the 'Checkout Overview' page after completed
+    This method is used to check that the url is changed to the 'Checkout Overview' page
+     when fill all required fields
     This method is use 'Fluent' pattern to make method chaining
     */
     @Test
@@ -56,10 +57,11 @@ public class CheckOutStepOneTest extends BaseTest {
 
 
     /*
-    This method is used to check when 'First Name' field is filled with special characters, is an alert
-    is shown?
-    It assumes that alert is shawn and the url stays the same and not proceeds to the next page, but as
-    the site contains that bug, and it actually accepts special characters in all fields the alert is not
+    This method uses soft assertion to test several assertion at once for the same condition,
+    first assertion is that website will not direct to next page,when using special character in firstname,
+    lastname and zipcode,
+    Second assertion is expected error message telling user "special character not allowed in these fields"
+    Note: the site contains that bug, and it actually accepts special characters in all fields & alert is not
     shawn, so the method is intended to be failed to show that there is a bug
     */
     @Test(dataProvider ="numbersAndSpecialCharacter", dataProviderClass = TestData.class)
